@@ -109,7 +109,7 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.7, delay: 0.7 }}
             src="/iso2.jpg" alt="ISO 2" className='h-72 hover:scale-105 transition-transform duration-300' />
         </div> */}
-        <div className="text-center mb-14 flex items-center justify-center gap-6">
+        <div className="text-center mb-14 sm:flex-row flex flex-col sm:flex-row  items-center justify-center gap-6">
           <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
             <motion.img
               initial={{ opacity: 0, y: 30 }}
