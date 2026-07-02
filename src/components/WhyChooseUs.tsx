@@ -7,21 +7,21 @@ const reasons = [
     icon: ShieldCheck,
     title: 'Premium Quality',
     titleAr: 'جودة عالية',
-    desc: 'ISO-compliant processing and strict quality controls ensure you receive only the best.',
+    desc: 'تضمن عمليات التصنيع المتوافقة مع معايير ISO وضوابط الجودة الصارمة حصولك على الأفضل فقط.',
     color: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white',
   },
   {
     icon: Sprout,
     title: 'Carefully Selected Crops',
     titleAr: 'محاصيل مختارة بعناية',
-    desc: 'Our agronomists personally evaluate farms and harvests before any purchase.',
+    desc: 'يقوم مهندسونا الزراعيون بتقييم المزارع والمحاصيل شخصياً قبل أي عملية شراء.',
     color: 'bg-green-50 text-green-600 group-hover:bg-green-600 group-hover:text-white',
   },
   {
     icon: Package,
     title: 'Hygienic Packaging',
     titleAr: 'تعبئة صحية',
-    desc: 'Modern packaging facilities ensure freshness, hygiene, and long shelf life.',
+    desc: 'تضمن مرافق التعبئة والتغليف الحديثة النضارة والنظافة وفترة صلاحية طويلة.',
     color: 'bg-brand-50 text-brand-600 group-hover:bg-brand-500 group-hover:text-white',
   },
   {
@@ -35,7 +35,7 @@ const reasons = [
     icon: Heart,
     title: 'Trusted by Families',
     titleAr: 'موثوق من العائلات',
-    desc: 'Over 5,000 families and businesses choose Haj Ali as their trusted food partner.',
+    desc: 'أكثر من 5,000 عائلة وشركة تختار حاج علي كشريكها الموثوق في التغذية.',
     color: 'bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white',
   },
   {
@@ -67,7 +67,6 @@ export default function WhyChooseUs() {
       <div className="absolute inset-0 bg-gradient-to-br from-navy-800 to-navy-900" />
       <div className="absolute inset-0 arabic-pattern opacity-20 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-1 bg-gradient-to-r from-transparent via-brand-500 to-transparent" />
-
       {/* Glow effects */}
       <div className="absolute top-1/4 left-0 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-navy-400/10 rounded-full blur-3xl pointer-events-none" />
@@ -95,6 +94,45 @@ export default function WhyChooseUs() {
             to nourishing families with the best nature has to offer.
           </p>
         </motion.div>
+
+        {/*  */}
+        {/* <div
+          className="text-center mb-14 flex items-center justify-center gap-4"
+        >
+          <motion.img initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            src="/iso1.jpg" alt="ISO 1" className='h-72 hover:scale-105 transition-transform duration-300' />
+          <motion.img
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.7 }}
+            src="/iso2.jpg" alt="ISO 2" className='h-72 hover:scale-105 transition-transform duration-300' />
+        </div> */}
+        <div className="text-center mb-14 flex items-center justify-center gap-6">
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+            <motion.img
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              src="/iso1.jpg"
+              alt="ISO 1"
+              className='h-72 object-cover cursor-pointer'
+            />
+          </motion.div>
+
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+            <motion.img
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.7 }}
+              src="/iso2.jpg"
+              alt="ISO 2"
+              className='h-72 object-cover cursor-pointer'
+            />
+          </motion.div>
+        </div>
+
 
         {/* Reasons Grid */}
         <motion.div
@@ -133,7 +171,7 @@ export default function WhyChooseUs() {
         >
           <div>
             <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-2">
-              Ready to partner with Haj Ali?
+             ? Ready to partner with Haj Ali
             </h3>
             <p className="font-arabic text-brand-100 text-lg">هل أنت مستعد للشراكة مع حاج علي؟</p>
             <p className="text-brand-100/80 text-sm mt-1">Get wholesale pricing and bulk supply agreements today.</p>

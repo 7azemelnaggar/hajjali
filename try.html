@@ -1,0 +1,262 @@
+<?php
+// index.php
+?>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاج علي | تحت الإنشاء</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Tahoma", "Arial", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top right, rgba(0, 132, 255, 0.25), transparent 35%),
+                radial-gradient(circle at bottom left, rgba(255, 166, 0, 0.25), transparent 35%),
+                linear-gradient(135deg, #050816, #0b1020);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .background-shapes span {
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .background-shapes span:nth-child(1) {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .background-shapes span:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            bottom: 15%;
+            left: 12%;
+            animation-delay: 2s;
+        }
+
+        .background-shapes span:nth-child(3) {
+            width: 160px;
+            height: 160px;
+            bottom: 8%;
+            right: 25%;
+            animation-delay: 4s;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            padding: 45px 25px;
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+            animation: cardIn 1s ease forwards;
+        }
+
+        .logo-box {
+            width: 260px;
+            max-width: 80%;
+            margin: 0 auto 25px;
+            animation: logoPulse 3s infinite ease-in-out;
+        }
+
+        .logo-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 15px 25px rgba(0, 132, 255, 0.35));
+        }
+
+        h1 {
+            font-size: clamp(32px, 6vw, 58px);
+            margin-bottom: 16px;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+
+        h1 span {
+            color: #ffad22;
+        }
+
+        p {
+            font-size: clamp(17px, 2.5vw, 22px);
+            color: #d9e4ff;
+            line-height: 1.9;
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+
+        .loader {
+            width: 240px;
+            height: 10px;
+            margin: 25px auto;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .loader::before {
+            content: "";
+            display: block;
+            width: 45%;
+            height: 100%;
+            background: linear-gradient(90deg, #0077ff, #ffad22);
+            border-radius: 50px;
+            animation: loading 1.8s infinite ease-in-out;
+        }
+
+        .contact {
+            margin-top: 22px;
+            font-size: 16px;
+            color: #aac2ff;
+        }
+
+        .dots {
+            display: inline-flex;
+            gap: 7px;
+            margin-right: 8px;
+        }
+
+        .dots i {
+            width: 8px;
+            height: 8px;
+            background: #ffad22;
+            border-radius: 50%;
+            display: block;
+            animation: bounce 1.2s infinite ease-in-out;
+        }
+
+        .dots i:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dots i:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes cardIn {
+            from {
+                opacity: 0;
+                transform: translateY(35px) scale(0.97);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes logoPulse {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.04) rotate(-1deg);
+            }
+        }
+
+        @keyframes loading {
+            0% {
+                transform: translateX(180%);
+            }
+            50% {
+                transform: translateX(20%);
+            }
+            100% {
+                transform: translateX(-180%);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-35px) scale(1.08);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+            40% {
+                transform: translateY(-8px);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 35px 18px;
+                border-radius: 22px;
+            }
+
+            .logo-box {
+                width: 210px;
+            }
+
+            .loader {
+                width: 190px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-shapes">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <main class="container">
+        <div class="logo-box">
+<img src="لوجو شفاف.png" alt="شعار حاج علي">        </div>
+
+        <h1>الموقع <span>تحت الإنشاء</span></h1>
+
+        <p>
+            نعمل الآن على تجهيز موقع حاج علي ليظهر بالشكل اللائق.
+            قريبًا سيتم إطلاق الموقع بخدمات ومعلومات منظمة وسهلة الوصول.
+        </p>
+
+        <div class="loader"></div>
+
+        <div class="contact">
+            جاري التجهيز
+            <span class="dots">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </main>
+
+</body>
+</html>

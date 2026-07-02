@@ -212,78 +212,110 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowLeft, ArrowRight  } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 const products = [
+ 
   {
-    name: 'Lentils',
-    nameAr: 'العدس',
-    desc: 'Green, red & black varieties — whole or split, rich in protein and flavor.',
+    name: 'Fava Beans',
+    nameAr: 'الفول',
+    desc: 'ويعدّ من أكثر أنواع البقوليات شعبية خاصّة في مصر وبلاد الشام ويحضّر منه الكثير من الأطباق. وتقدم شركه الطباخ انواع عده منه معبأه ومفروزة اليا فى محتوى عبوة 25 كيلو .',
     image: 'https://images.pexels.com/photos/34693984/pexels-photo-34693984.jpeg',
     color: 'from-amber-600 to-amber-800',
-    tag: 'Best Seller',
+    types: [
+      'فول صحيح انجليزي',
+      "فول صحيح استرالي",
+      'مجروش استرالي',
+      'مجروش ليتواني',
+      'مجروش فص'
+    ]
   },
   {
-    name: 'Beans',
-    nameAr: 'الفاصوليا',
-    desc: 'White, black-eye, and kidney beans — dried or ready for culinary use.',
+    name: 'crushed fava beans',
+    nameAr: 'فول مجروش',
+    desc: 'ويعدّ من أكثر أنواع البقوليات شعبية خاصّة في مصر وبلاد الشام ويحضّر منه الكثير من الأطباق. وتقدم شركه الطباخ انواع عده منه معبأه ومفروزة اليا فى محتوى عبوة 25 كيلو .',
     image: 'https://i.postimg.cc/BnksHvry/Gemini-Generated-Image-io8w17io8w17io8w.png',
     color: 'from-stone-500 to-stone-700',
-    tag: 'Popular',
+    types: []
   },
   {
-    name: 'Chickpeas',
-    nameAr: 'الحمص',
-    desc: 'Plump, high-quality chickpeas — essential for hummus and hearty stews.',
+    name: 'Egyptian white pulp',
+    nameAr: 'لب أبيض مصري',
+    desc: 'يستمد اللب الابيض فوائده من العناصر الغذائية الرائعة التي توجد به. فهو غني بالفيتامينات والمعادن الضرورية للوظائف الحيوية للجسم. كما أنه يمد الجسم بالطاقة من خلال السعرات الحرارية وتقدم الشركه المحصول معبأ فى عبوات مخصصه',
     image: 'https://images.pexels.com/photos/28110905/pexels-photo-28110905.jpeg',
     color: 'from-yellow-600 to-yellow-800',
-    tag: 'Premium',
+    types: []
+  },
+  {
+    name: 'white beans',
+    nameAr: 'الفاصوليا البيضا',
+    desc: 'تعد الفاصوليا البيضاء من اهم البقوليات بسب قيمتها الغذائية العالية فهي معبأة بحمض الفوليك والبروتين و الكربوهيدرات و الألياف وبالتالي فهي غذاء أساسي عند فقدان الوزن وقد سميت الفاصوليا البيضاء بهذا الإسم لأنها ذات شكل محدب مثل الكلي وهي من أفضل الأطعمة التي تساعدك علي فقدان الوزن وذلك لأنها تحتوي علي نسبة عالية من الألياف، وبالتالي تعطي شعور بالشبع لمدة أطول وتحتوي الفاصوليا البيضاء أيضاً علي العديد من العناصر الغذائية مثل المعادن والفيتامينات و البروتينات . وتقدم الشركه معبأ ومفروز أليا فى محتوى عبوة 25 كيلو .',
+    image: 'https://i.postimg.cc/cL97cpTS/Gemini-Generated-Image-tjna4gtjna4gtjna.png',
+    color: 'from-neutral-400 to-neutral-600',
+    types: []
   },
   {
     name: 'Rice',
-    nameAr: 'الأرز',
-    desc: 'Basmati, long-grain, and Egyptian varieties — fragrant and perfectly milled.',
-    image: 'https://i.postimg.cc/cL97cpTS/Gemini-Generated-Image-tjna4gtjna4gtjna.png',
-    color: 'from-neutral-400 to-neutral-600',
-    tag: 'Premium',
-  },
-  {
-    name: 'Wheat',
-    nameAr: 'القمح',
-    desc: 'Whole wheat, semolina, and cracked wheat — the foundation of Arab cuisine.',
+    nameAr: 'أرز',
+    desc: 'الأرز الأبيض هو واحد من أشهر الأصناف التي تدخل في عديدٍ من الأطباق العربيّة المختلفة، إضافةً إلى كونه الغذاء الأساسي لأكثر من نصف سكّان العالم. وتقدم الشركه معبأ ومفروز أليا فى محتوى عبوة 25( كيلوجرام - 1 كيلو جرام) فى نوعين :',
     image: 'https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg?auto=compress&cs=tinysrgb&w=600',
     color: 'from-yellow-700 to-amber-900',
-    tag: 'Traditional',
+    types: [
+      '     ارزمصرى كاملينو 2( منقى الكترونيا ومعبأ اليا )',
+      "ارز مصرى (منقى الكترونيا ومعالج بالبخار )"
+    ]
   },
   {
-    name: 'Corn',
-    nameAr: 'الذرة',
-    desc: 'Yellow corn, dried and processed — ideal for grits, cornmeal, and feeds.',
+    name: 'لوبيا بلدي',
+    nameAr: 'لوبيا بلدي',
+    desc: 'اللوبيا هو نوع من البقوليات والتي يكون لها هيكل بيضاوي قليلا مع العين السوداء وتحظى بشعبية على نطاق واسع لنكهتها الطيبة، و يعتبر نبات اللوبيا من أغنى النباتات بمادة البروتين، حيث ترتفع فيه نسبة البروتين عن بقية البقوليات والكثير من النباتات الأخرى. وتحتوي اللوبيا على العديد من العناصر الغذائيه فهى. تحتوي على ما يقرب من جميع الفيتامينات والمعادن الأساسية . وتقدم الشركه معبأ ومفروز أليا فى محتوى عبوة 25 كيلو',
     image: 'https://images.pexels.com/photos/9362415/pexels-photo-9362415.jpeg',
     color: 'from-yellow-400 to-yellow-600',
-    tag: 'Natural',
+    types: []
   },
   {
-    name: 'Herbs & Spices',
-    nameAr: 'الأعشاب والبهارات',
-    desc: 'Cumin, turmeric, coriander, and blended spice mixes for authentic flavors.',
+    name: 'ترمس حلو',
+    nameAr: 'ترمس حلو',
+    desc: 'نبات الترمس هو نبات من الفصيلة البقولية، و تعود أصوله إلى دول البحر المتوسط هو عبارة عن بذور جافة تزرع في مصر وسوريا وفلسطين والأردن ولبنان، وهو نبات من الفصيلة القرنية ويتم زراعته برياً. وتقدم الشركه معبأ ومفروز أليا فى محتوى عبوة 25 كيلو .',
     image: 'https://images.pexels.com/photos/27680729/pexels-photo-27680729.jpeg',
     color: 'from-orange-600 to-red-800',
-    tag: 'Aromatic',
+    types: []
   },
   {
-    name: 'Seeds',
-    nameAr: 'البذور',
-    desc: 'Sesame, flaxseed, sunflower, and pumpkin seeds — nutritious and versatile.',
+    name: 'فول سوداني مجهز',
+    nameAr: 'فول سوداني مجهز',
+    desc: 'الفول السوداني هو من المحاصيل الصيفية ينتمي إلى البقوليات ذوات الفلقتين ، تنبت أزهاره فوق التربة ثم تعمل على غرس الجنين ليكتمل نموه ، يوجد منه أصناف كثيرة وترجع أصنافه حسب حجم النبتة وكبرها . وتقدم الشركه معبأ ومفروز أليا فى محتوى عبوة 25 كيلو .',
     image: 'https://images.pexels.com/photos/5988203/pexels-photo-5988203.jpeg',
     color: 'from-teal-600 to-teal-800',
-    tag: 'Healthy',
+    types: []
+  },
+  {
+    name: 'كراوية',
+    nameAr: 'كراوية',
+    desc: 'الكراويه من النباتات العطريه التى لها له شهرة واسعه فى مصر والوطن العربى و تستخدم في صناعة الجبن والفطائر والحلويات والخبز والكيك ، وتضاف الى الحساء والحليب ، وتخلط بالفاكهه المطبوخة والثمار المجففة ، وتستخدم الكراوية كعلف للماشية ، وتضاف الكراوية الى الادوية لتحسين نكهتها ، ويحتوي نبات الكراوية على الزيوت الدهنية والبروتين والزيت الطيار الذي يحتوي على مادة الكارفون الهاضمة والليمونين ويحتوي النبات ايضا على زيت ثابت وفلافونيدات ومواد سكرية ، ويستخدم من النبات الثمار والزيت الطيار ، والكراوية لها طعم حريف ورائحة مميزة وتقدم الشركه معبأ ومفروز أليا',
+    image: 'https://images.pexels.com/photos/5988203/pexels-photo-5988203.jpeg',
+    color: 'from-teal-600 to-teal-800',
+    types: []
+  },
+  {
+    name: 'حلبة بلدي',
+    nameAr: 'حلبة بلدي',
+    desc: 'من اهم النباتات الموجودة على الأرض تتبع الحلبة فصيلة البقوليات. الحلبة نبات أصفر اللون وهي بذور كما أنها نبات قديم حيث ثبت أن الحلبة كان لها إستخدامات في عصر ما قبل الميلاد لعلاج الحروق وغيره من الإستعمالات الطبية وتقدم الشركه معبأ ومفروز أليا',
+    image: 'https://images.pexels.com/photos/5988203/pexels-photo-5988203.jpeg',
+    color: 'from-teal-600 to-teal-800',
+    types: []
   },
 ];
+
+
+const getDescLimit = (desc: string) =>{
+  const limit = 100;
+  return desc.length > limit ? desc.substring(0, limit) + '...' : desc;
+}
 
 export default function Products() {
   const ref = useRef(null);
@@ -331,7 +363,7 @@ export default function Products() {
             pagination={{ clickable: true }}
             autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
             breakpoints={{
-              640:  { slidesPerView: 2, spaceBetween: 20 },
+              640: { slidesPerView: 2, spaceBetween: 20 },
               1024: { slidesPerView: 3, spaceBetween: 24 },
               1280: { slidesPerView: 4, spaceBetween: 24 },
             }}
@@ -351,11 +383,11 @@ export default function Products() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
                     {/* Tag */}
-                    <div className="absolute top-3 left-3">
+                    {/* <div className="absolute top-3 left-3">
                       <span className="bg-brand-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
                         {product.tag}
                       </span>
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Content */}
@@ -369,7 +401,7 @@ export default function Products() {
                         <ArrowRight size={14} className="text-gray-400 group-hover:text-white transition-colors" />
                       </div>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{product.desc}</p>
+                    <p className="text-gray-500 text-sm leading-relaxed">{getDescLimit(product.desc)}</p>
                   </div>
                 </div>
               </SwiperSlide>
