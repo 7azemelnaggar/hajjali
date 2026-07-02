@@ -115,7 +115,7 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.5 }}
-              src="/iso1.jpg"
+              src="https://i.postimg.cc/m25hgkk5/iso1-jpg.jpg"
               alt="ISO 1"
               className='h-72 object-cover cursor-pointer'
             />
@@ -126,7 +126,7 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.7 }}
-              src="/iso2.jpg"
+              src="https://i.postimg.cc/TPrP0c03/iso2-jpg.jpg"
               alt="ISO 2"
               className='h-72 object-cover cursor-pointer'
             />
