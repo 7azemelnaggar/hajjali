@@ -4,27 +4,27 @@ import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle } from 'lucide-re
 
 const contactInfo = [
   {
-    icon: Phone,
-    label: 'Phone',
-    labelAr: 'الهاتف',
-    value: '+20 XXX XX XX XX',
-    href: 'tel:+20XXXXXXXXX',
-    color: 'bg-blue-50 text-blue-600',
-  },
-  {
     icon: MessageCircle,
     label: 'WhatsApp',
     labelAr: 'واتساب',
-    value: '+20 XXX XX XX XX',
-    href: 'https://wa.me/20XXXXXXXXX',
+    value: '+20 100 8626066',
+    href: 'https://wa.me/201008626066',
     color: 'bg-green-50 text-green-600',
+  },
+  {
+    icon: Phone,
+    label: 'Phone',
+    labelAr: 'الهاتف',
+    value: '+20 127 1355585',
+    href: 'tel:+201271355585',
+    color: 'bg-blue-50 text-blue-600',
   },
   {
     icon: Mail,
     label: 'Email',
     labelAr: 'البريد الإلكتروني',
-    value: 'info@hajali.com',
-    href: 'mailto:info@hajali.com',
+    value: 'info@hajjali.com',
+    href: 'mailto:info@hajjali.com',
     color: 'bg-brand-50 text-brand-600',
   },
   {
@@ -121,7 +121,7 @@ export default function Contact() {
                 <div>
                   <div className="font-semibold text-navy-800 text-sm">{label}</div>
                   <div className="text-brand-500 text-xs font-arabic mb-0.5">{labelAr}</div>
-                  <div className="text-gray-500 text-sm">{value}</div>
+                  <div className="text-gray-500 text-sm" dir="ltr">{value}</div>
                 </div>
               </motion.a>
             ))}

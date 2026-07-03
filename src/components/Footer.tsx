@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube, ArrowUp, Wheat } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Facebook, Instagram, Twitter, Youtube, ArrowUp, Wheat } from 'lucide-react';
 
 const quickLinks = [
   { label: 'Home', labelAr: 'الرئيسية', href: '#hero' },
@@ -131,18 +131,25 @@ export default function Footer() {
               <span className="font-arabic text-brand-400 font-normal text-sm">تواصل</span>
             </h4>
             <div className="space-y-4">
-              <a href="tel:+213XXXXXXXX" className="flex items-start gap-3 text-navy-300 hover:text-brand-400 transition-colors group">
-                <Phone size={16} className="mt-0.5 flex-shrink-0 text-brand-600 group-hover:text-brand-400" />
+              <a href="https://wa.me/201008626066" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-navy-300 hover:text-brand-400 transition-colors group">
+                <MessageCircle size={16} className="mt-0.5 flex-shrink-0 text-brand-600 group-hover:text-brand-400" />
                 <div>
-                  <div className="text-sm">+20 XXX XX XX XX</div>
-                  <div className="font-arabic text-xs text-navy-500"></div>
+                  <div className="text-sm" dir="ltr">+20 100 862 6066</div>
+                  <div className="font-arabic text-xs text-navy-500">واتساب</div>
                 </div>
               </a>
-              <a href="mailto:info@hajali.com" className="flex items-start gap-3 text-navy-300 hover:text-brand-400 transition-colors group">
+              <a href="tel:+201271355585" className="flex items-start gap-3 text-navy-300 hover:text-brand-400 transition-colors group">
+                <Phone size={16} className="mt-0.5 flex-shrink-0 text-brand-600 group-hover:text-brand-400" />
+                <div>
+                  <div className="text-sm" dir="ltr">+20 127 135 5585</div>
+                  <div className="font-arabic text-xs text-navy-500">الهاتف</div>
+                </div>
+              </a>
+              <a href="mailto:info@hajjali.com" className="flex items-start gap-3 text-navy-300 hover:text-brand-400 transition-colors group">
                 <Mail size={16} className="mt-0.5 flex-shrink-0 text-brand-600 group-hover:text-brand-400" />
                 <div>
-                  <div className="text-sm">info@hajali.com</div>
-                  <div className="font-arabic text-xs text-navy-500"></div>
+                  <div className="text-sm">info@hajjali.com</div>
+                  <div className="font-arabic text-xs text-navy-500">البريد الإلكتروني</div>
                 </div>
               </a>
               <div className="flex items-start gap-3 text-navy-300">
