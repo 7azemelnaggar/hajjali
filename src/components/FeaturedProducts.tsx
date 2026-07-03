@@ -71,7 +71,7 @@ export default function FeaturedProducts() {
             Featured Products — منتجات مميزة
             <span className="w-6 h-0.5 bg-brand-500 inline-block" />
           </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-navy-800 mb-3">
+          <h2 className="font-sans text-4xl lg:text-5xl font-bold text-navy-800 mb-3">
             Our
             <span className="text-gradient"> Signature Range</span>
           </h2>
@@ -89,7 +89,7 @@ export default function FeaturedProducts() {
             <button
               key={p.id}
               onClick={() => setActive(i)}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 ${
                 active === i
                   ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/30'
                   : 'bg-white text-gray-600 border border-cream-200 hover:border-brand-300'
