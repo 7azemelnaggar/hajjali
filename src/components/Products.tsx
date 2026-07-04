@@ -365,7 +365,7 @@ const getDescLimit = (desc: string) => {
 const popupVariants = {
   hidden:  { opacity: 0, scale: 0.96, y: 16 },
   visible: { opacity: 1, scale: 1,    y: 0,
-    transition: { duration: 0.15, ease: [0.0, 0.0, 0.2, 1] } },
+    transition: { duration: 0.15, ease: 'easeOut' } },
   exit:    { opacity: 0, scale: 0.96, y: 8,
     transition: { duration: 0.1,  ease: 'easeIn' } },
 };
@@ -378,8 +378,12 @@ const backdropVariants = {
 
 export default function Products() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
+
+  const featuredProducts = products.slice(0, 4);
+  const remainingProducts = products.slice(4);
 
   const openPopup  = (product: Product) => setSelectedProduct(product);
   const closePopup = () => setSelectedProduct(null);
@@ -492,8 +496,8 @@ export default function Products() {
             <span className="w-6 h-0.5 bg-brand-500 inline-block" />
           </span>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-navy-800 mb-3">
-            Nature's Finest,<br />
-            <span className="text-gradient">Carefully Selected</span>
+            Featured
+            <span className="text-gradient"> Selection</span>
           </h2>
           <p className="font-arabic text-xl text-gray-400 mb-4">خير الطبيعة، بعناية واختيار</p>
           <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
@@ -507,7 +511,7 @@ export default function Products() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="pb-12"
+          className={showAll ? 'pb-6' : 'pb-12'}
         >
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -522,7 +526,7 @@ export default function Products() {
             }}
             className="!pb-10"
           >
-            {products.map((product) => (
+            {featuredProducts.map((product) => (
               <SwiperSlide key={product.name} onClick={() => openPopup(product)}>
                 <div className="group relative bg-white rounded-3xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-400 cursor-pointer h-full">
                   <div className="relative h-52 overflow-hidden">
@@ -533,6 +537,9 @@ export default function Products() {
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t ${product.color} opacity-20 group-hover:opacity-30 transition-opacity`} />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    <span className="absolute top-3 right-3 bg-brand-500 text-white text-[11px] font-semibold uppercase tracking-[0.08em] px-2.5 py-1 rounded-full shadow-lg">
+                      الأكثر مبيعا
+                    </span>
                   </div>
                   <div className="p-5">
                     <div className="flex items-start justify-between mb-2">
@@ -552,21 +559,71 @@ export default function Products() {
           </Swiper>
         </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-4"
-        >
-          <button
-            onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="btn-primary"
+        <AnimatePresence mode="wait">
+          {showAll && (
+            <motion.div
+              key="expanded-products"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.35 }}
+              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+              layout
+            >
+              {remainingProducts.map((product, index) => (
+                <motion.div
+                  key={product.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.35, delay: index * 0.05 }}
+                  className="group relative bg-white rounded-3xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-400 cursor-pointer h-full"
+                  onClick={() => openPopup(product)}
+                  layout
+                >
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${product.color} opacity-20 group-hover:opacity-30 transition-opacity`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+                <div className="p-5">
+                  <div className="flex items-start justify-between mb-2">
+                    <div>
+                      <h3 className="font-display font-bold text-navy-800 text-lg leading-tight">{product.name}</h3>
+                      <p className="font-arabic text-brand-500 text-sm">{product.nameAr}</p>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-cream-100 group-hover:bg-brand-500 flex items-center justify-center transition-colors mt-1 shrink-0">
+                      <ArrowRight size={14} className="text-gray-400 group-hover:text-white transition-colors" />
+                    </div>
+                  </div>
+                  <p className="text-gray-500 text-sm leading-relaxed">{getDescLimit(product.desc)}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+        </AnimatePresence>
+
+        {!showAll && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-center mt-8"
           >
-            Request a Catalog
-            <ArrowLeft size={18} />
-          </button>
-        </motion.div>
+            <button
+              onClick={() => setShowAll(true)}
+              className="btn-primary"
+            >
+              Show More
+              <ArrowLeft size={18} />
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
