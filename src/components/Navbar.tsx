@@ -5,8 +5,8 @@ import { Menu, X, Phone } from 'lucide-react';
 const navLinks = [
   { label: 'الرئيسيه', labelAr: '', href: '#hero' },
   { label: 'اعرف عنا', labelAr: '', href: '#about' },
-  { label: 'المنتاجات', labelAr: '', href: '#products' },
-  { label: 'الخدامات', labelAr: '', href: '#why-us' },
+  { label: 'المنتجات', labelAr: '', href: '#products' },
+  { label: 'الخدمات', labelAr: '', href: '#why-us' },
   { label: 'اتصل بنا', labelAr: '', href: '#contact' },
 ];
 

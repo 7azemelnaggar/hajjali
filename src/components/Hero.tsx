@@ -216,7 +216,7 @@ const stats = [
   { value: '30+', label: 'Years Experience', labelAr: 'سنة خبرة' },
   { value: '200+', label: 'Products', labelAr: 'منتج' },
   { value: '5000+', label: 'Happy Clients', labelAr: 'عميل راضٍ' },
-  { value: '15+', label: 'Countries', labelAr: 'دولة' },
+  { value: '50+', label: 'Countries', labelAr: 'دولة' },
 ];
 
 export default function Hero() {
