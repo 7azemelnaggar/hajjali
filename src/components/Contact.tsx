@@ -31,8 +31,8 @@ const contactInfo = [
     icon: MapPin,
     label: 'Address',
     labelAr: 'العنوان',
-    value: 'Zone Industrielle, ELBehira',
-    href: '#',
+    value: 'Industrial Zone - Ferhash - Hosh Issa - Elbeheira - Egypt',
+    href: 'https://maps.app.goo.gl/vfH5cAc1PUAAT3qu6',
     color: 'bg-purple-50 text-purple-600',
   },
 ];
@@ -132,13 +132,13 @@ export default function Contact() {
               className="rounded-2xl overflow-hidden border border-cream-200 shadow-sm h-52 bg-cream-100 relative"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3565225.4996062657!2d29.218958749999995!3d29.23339122212074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDEzJzUxLjciTiAzM8KwNDgnMzQuNCJF!5e0!3m2!1sen!2seg!4v1781522413759!5m2!1sen!2seg"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.9897016283726!2d30.372999499999995!3d30.914912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f611f22823eff5%3A0x4049539f6475eb72!2z2LTYsdmD2Kkg2K3YrCDYudmE2Yog2YTZhNit2KfYtdmE2KfYqiDYp9mE2LLYsdin2LnZitmHINmIINin2YTYp9iz2KrZitix2KfYryDZiNin2YTYqti12K_Zitix!5e0!3m2!1sen!2seg!4v1783252409453!5m2!1sen!2seg"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 title="Haj Ali Location"
                 className="grayscale hover:grayscale-0 transition-all duration-500"
               />

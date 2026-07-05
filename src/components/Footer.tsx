@@ -152,13 +152,18 @@ export default function Footer() {
                   <div className="font-arabic text-xs text-navy-500">البريد الإلكتروني</div>
                 </div>
               </a>
-              <div className="flex items-start gap-3 text-navy-300">
-                <MapPin size={16} className="mt-0.5 flex-shrink-0 text-brand-600" />
+              <a
+                href="https://maps.app.goo.gl/vfH5cAc1PUAAT3qu6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 text-navy-300 hover:text-brand-400 transition-colors group"
+              >
+                <MapPin size={16} className="mt-0.5 flex-shrink-0 text-brand-600 group-hover:text-brand-400" />
                 <div>
-                  <div className="text-sm">Zone Industrielle, ElBehira</div>
-                  <div className="font-arabic text-xs text-navy-500">المنطقة الصناعية، البحيرة</div>
+                  <div className="text-sm">Industrial Zone - Ferhash - Hosh Issa - Elbeheira - Egypt</div>
+                  <div className="font-arabic text-xs text-navy-500">المنطقة الصناعية - حوش عيسى - البحيرة</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
