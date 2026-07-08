@@ -450,8 +450,8 @@ export default function Products() {
                 </div>
 
                 {/* Body */}
-                <div className="p-6" dir="rtl">
-                  <p className="text-gray-600 leading-relaxed text-sm mb-5 font-arabic text-right">
+                <div className="p-6" dir="ltr">
+                  <p className="text-gray-600 leading-relaxed text-sm mb-5 font-arabic text-left">
                     {selectedProduct.desc}
                   </p>
 

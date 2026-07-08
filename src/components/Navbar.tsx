@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
 
 const navLinks = [
-  { label: 'الرئيسيه', labelAr: '', href: '#hero' },
-  { label: 'اعرف عنا', labelAr: '', href: '#about' },
-  { label: 'المنتجات', labelAr: '', href: '#products' },
-  { label: 'الخدمات', labelAr: '', href: '#why-us' },
-  { label: 'اتصل بنا', labelAr: '', href: '#contact' },
+  { label: 'Home', labelAr: '', href: '#hero' },
+  { label: 'About', labelAr: '', href: '#about' },
+  { label: 'Products', labelAr: '', href: '#products' },
+  { label: 'Services', labelAr: '', href: '#why-us' },
+  { label: 'Contact', labelAr: '', href: '#contact' },
 ];
 
 export default function Navbar() {
