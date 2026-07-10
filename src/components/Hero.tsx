@@ -219,11 +219,39 @@ const stats = [
   { value: '50+', label: 'Countries', labelAr: 'دولة' },
 ];
 
-export default function Hero() {
-  const swiperRef = useRef(null);
+interface HeroProps {
+  language: 'en' | 'ar';
+}
+
+export default function Hero({ language }: HeroProps) {
+  const swiperRef = useRef<HTMLDivElement | null>(null);
+  const content = language === 'en'
+    ? {
+        badge: 'Premium food products',
+        titleLine1: 'From Tradition',
+        titleLine2: 'to Every Table',
+        subtitle: 'Finest grains and legumes from Haj Ali',
+        description: 'Premium quality grains, lentils, rice, and traditional pantry essentials — sourced from the finest farms and delivered with care.',
+        explore: 'Explore Products',
+        contact: 'Contact Us',
+        scroll: 'Scroll Down',
+      }
+    : {
+        badge: 'أفخر المنتجات الغذائية',
+        titleLine1: 'من التراث',
+        titleLine2: 'إلى كل مائدة',
+        subtitle: 'أجود الحبوب والبقوليات من حاج علي',
+        description: 'حبوب وبقوليات وأرز ومستلزمات مطبخ تقليدية عالية الجودة — من أفضل المزارع وموردة بعناية.',
+        explore: 'استكشف المنتجات',
+        contact: 'تواصل معنا',
+        scroll: 'الانتقال للأسفل',
+      };
 
   useEffect(() => {
-    const swiper = new Swiper(swiperRef.current, {
+    const element = swiperRef.current;
+    if (!element) return undefined;
+
+    const swiper = new Swiper(element, {
       modules: [Autoplay, EffectFade, Scrollbar],
       direction: 'vertical',
       loop: true,
@@ -234,7 +262,9 @@ export default function Hero() {
       speed: 1000,
     });
 
-    return () => swiper.destroy();
+    return () => {
+      swiper.destroy();
+    };
   }, []);
 
   const handleExplore = () => document.querySelector('#products')?.scrollIntoView({ behavior: 'smooth' });
@@ -297,7 +327,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-brand-500/20 backdrop-blur-sm border border-brand-500/40 rounded-full px-4 py-2 mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
-              <span className="text-brand-200 text-sm font-medium tracking-wide">أفخر المنتجات الغذائية</span>
+              <span className="text-brand-200 text-sm font-medium tracking-wide">{content.badge}</span>
             </motion.div>
 
             <motion.h1
@@ -306,8 +336,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.25 }}
               className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-4 text-shadow-lg"
             >
-              From Tradition<br />
-              <span className="text-brand-400">to Every Table</span>
+              {content.titleLine1}<br />
+              <span className="text-brand-400">{content.titleLine2}</span>
             </motion.h1>
 
             <motion.p
@@ -316,7 +346,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-arabic text-2xl sm:text-3xl text-cream-200 mb-4 text-shadow leading-relaxed"
             >
-              أجود الحبوب والبقوليات من حاج علي
+              {content.subtitle}
             </motion.p>
 
             <motion.p
@@ -325,8 +355,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="text-white/70 text-lg max-w-xl mb-10 leading-relaxed"
             >
-              Premium quality grains, lentils, rice, and traditional pantry essentials —
-              sourced from the finest farms and delivered with care.
+              {content.description}
             </motion.p>
 
             <motion.div
@@ -336,11 +365,11 @@ export default function Hero() {
               className="flex flex-wrap gap-4 mb-16"
             >
               <button onClick={handleExplore} className="btn-primary text-base">
-                المنتجات
-                <ArrowLeft size={18} />
+                {content.explore}
+                {language === 'en' ? <ArrowRight size={18} /> : <ArrowLeft size={18} />}
               </button>
               <button onClick={handleContact} className="btn-secondary text-base">
-                تواصل معنا
+                {content.contact}
               </button>
             </motion.div>
 
@@ -359,8 +388,9 @@ export default function Hero() {
                   className="text-center sm:text-left"
                 >
                   <div className="font-display text-3xl font-bold text-brand-400 mb-1">{stat.value}</div>
-                  <div className="text-white/60 text-xs uppercase tracking-wider">{stat.label}</div>
-                  <div className="text-white/40 text-xs font-arabic">{stat.labelAr}</div>
+                  <div className={`text-white/60 text-xs uppercase tracking-wider ${language === 'ar' ? 'font-arabic' : ''}`}>
+                    {language === 'en' ? stat.label : stat.labelAr}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -376,7 +406,7 @@ export default function Hero() {
         onClick={handleScroll}
         className="relative z-10 flex flex-col items-center gap-2 pb-8 mx-auto text-white/40 hover:text-white/70 transition-colors"
       >
-        <span className="text-xs uppercase tracking-widest">Scroll Down</span>
+        <span className="text-xs uppercase tracking-widest">{content.scroll}</span>
         <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
           <ChevronDown size={20} />
         </motion.div>

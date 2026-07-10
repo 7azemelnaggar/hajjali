@@ -8,24 +8,28 @@ const pillars = [
     title: 'Premium Quality',
     titleAr: 'جودة عالية',
     desc: 'Every product goes through rigorous quality checks to ensure only the finest reaches your table.',
+    descAr: 'تخضع كل المنتجات لفحوصات جودة صارمة لضمان وصول الأفضل فقط إلى مائدتك.',
   },
   {
     icon: Users,
     title: 'Trusted Suppliers',
     titleAr: 'موردون موثوقون',
     desc: 'We partner exclusively with certified farms and trusted suppliers across the region.',
+    descAr: 'نحن نتعاون حصريًا مع مزارع وموردين معتمدين وموثوقين في المنطقة.',
   },
   {
     icon: Leaf,
     title: 'Fresh Products',
     titleAr: 'منتجات طازجة',
     desc: 'Direct sourcing ensures maximum freshness and nutritional value in every grain and legume.',
+    descAr: 'يضمن sourcing المباشر أقصى درجة من النضارة والقيمة الغذائية في كل حبة وبقل.',
   },
   {
     icon: TrendingUp,
     title: 'Competitive Prices',
     titleAr: 'أسعار تنافسية',
     desc: 'Premium quality at fair prices — because great food should be accessible to every family.',
+    descAr: 'جودة متميزة بأسعار عادلة لأن الطعام الجيد يجب أن يكون في متناول كل عائلة.',
   },
 ];
 
@@ -36,12 +40,46 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-export default function About() {
+interface AboutProps {
+  language: 'en' | 'ar';
+}
+
+export default function About({ language }: AboutProps) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
+
+  const content = language === 'en'
+    ? {
+        eyebrow: 'Our Story — قصتنا',
+        heading: <>About <span className="text-gradient">Us</span></>,
+        intro: 'We are a trusted Egyptian company with more than 30 years of experience in sourcing, processing, and exporting agricultural products to markets around the world.',
+        bullets: [
+          'Haj Ali Company specializes in sorting, packing, importing, and exporting agricultural products.',
+          'We have built a strong reputation through reliable products, professional service, and long-term partnerships with clients worldwide.',
+          'We export around 50,000 metric tons annually, including lentils, chickpeas, broad beans, white beans, peanuts, lupins, rice, cumin, sunflower seeds, and more.',
+          'Quality is the foundation of our work, and we ensure every shipment meets strict standards and client expectations.',
+          'We consider our clients as long-term partners, and we value trust, transparency, competitive pricing, and punctual delivery.',
+          'Germany is one of our important markets, and we continue to build strong relationships with German partners based on mutual trust and shared success.',
+          'Our objective is not only to fulfill one shipment, but to build sustainable long-term business relationships.',
+        ],
+      }
+    : {
+        eyebrow: 'قصتنا — Our Story',
+        heading: <><span className="text-gradient">من</span> نحن</>,
+        intro: 'نحن شركة مصرية موثوقة تتمتع بأكثر من 30 عامًا من الخبرة في توريد وتصنيع وتصدير المنتجات الزراعية إلى أسواق حول العالم.',
+        bullets: [
+          'تتخصص شركة الحاج علي في فرز وتعبئة واستيراد وتصدير المنتجات الزراعية.',
+          'لقد بنينا سمعة قوية من خلال منتجات موثوقة وخدمات مهنية وشراكات طويلة الأمد مع العملاء في جميع أنحاء العالم.',
+          'نصدر ما يقارب 50 ألف طن متري سنويًا تشمل العدس والحمص والفول العريض والفاصوليا البيضاء والفول السوداني والترمس والأرز والكراوية وبذور عباد الشمس وغير ذلك.',
+          'الجودة هي أساس عملنا، ونضمن أن كل شحنة تتوافق مع المعايير الصارمة وتوقعات العملاء.',
+          'نعتبر عملائنا شركاء طويل الأمد، ونعطي الأولوية للثقة والشفافية والأسعار التنافسية والتسليم في المواعيد.',
+          'ألمانيا من أهم الأسواق بالنسبة لنا، ونحن نعمل على بناء علاقات قوية مع الشركاء الألمان على أساس الثقة المتبادلة والنجاح المشترك.',
+          'هدفنا ليس مجرد تنفيذ شحنة واحدة، بل بناء علاقات تجارية مستدامة على المدى الطويل.',
+        ],
+      };
 
   return (
     <section id="about" className="bg-cream-50 section-padding relative overflow-hidden">
@@ -59,14 +97,13 @@ export default function About() {
           <motion.div variants={itemVariants} className="text-center">
             <span className="section-label justify-center">
               <span className="w-8 h-0.5 bg-brand-500 inline-block" />
-              Our Story — قصتنا
+              {content.eyebrow}
               <span className="w-8 h-0.5 bg-brand-500 inline-block" />
             </span>
           </motion.div>
 
           <motion.h2 variants={itemVariants} className="font-display text-4xl lg:text-5xl font-bold text-navy-800 mb-2 leading-tight text-center">
-            About
-            <span className="text-gradient"> Us</span>
+            {content.heading}
           </motion.h2>
 
           <motion.p variants={itemVariants} className="font-arabic text-xl text-gray-500 mb-6 leading-relaxed text-center">
@@ -80,38 +117,19 @@ export default function About() {
           </motion.p>
 
           <motion.p variants={itemVariants} className="text-gray-500 leading-relaxed mb-10 text-center">
-            {/* Today, we continue that legacy — sourcing from the best farms across the Arab world,
-            packaging with modern hygiene standards, and distributing to homes and businesses
-            who trust the Haj Ali name as a mark of excellence. */}
-
-            <ul className='flex flex-col align-top items-start justify-start list-disc'>
-              <li className=' text-justify'>
-                شركة الحاج علي لفرز وتعبئة الحاصلات الزراعية والاستيراد والتصدير
-              </li>
-              <li className=' text-justify'>
-                نحن شركة مصرية تمتلك خبرة تزيد على 30 عامًا في تجهيز وتصدير الحاصلات الزراعية. وخلال هذه السنوات، نجحنا في بناء سمعة قوية من خلال تقديم منتجات موثوقة، وخدمات احترافية، وعلاقات تجارية طويلة الأمد مع عملائنا في مختلف أنحاء العالم.
-              </li>
-              <li className=' text-justify'>
-                نقوم اليوم بتصدير ما يقارب 50,000 طن متري سنويًا. وتشمل منتجاتنا الرئيسية: العدس، والحمص، والفول العريض، والفاصوليا البيضاء، والفول السوداني، والترمس، والأرز، وبذور الشمر، وبذور عباد الشمس، بالإضافة إلى العديد من المنتجات الزراعية الأخرى.
-              </li>
-              <li className=' text-justify'>
-              تُعد الجودة أساس عملنا. فنحن نحرص على اختيار أفضل المواد الخام، ونستخدم أحدث تقنيات الفرز والتعبئة، ونتأكد من أن كل شحنة تلبي متطلبات عملائنا. كما ندرك أن لكل سوق معاييره الخاصة، ولذلك نعمل دائمًا على الالتزام بهذه المعايير وتجاوز توقعات العملاء.
-              </li>
-              <li className=' text-justify'>
-              ونحن نؤمن أيضًا بأن عملاءنا لا يبحثون فقط عن مورد، بل عن شريك يعتمد عليه. لذلك نركز على تقديم جودة ثابتة، وأسعار تنافسية، والتسليم في المواعيد المحددة، وسرعة التواصل. ونؤمن بأن الثقة تُبنى بالأفعال وليس بالكلمات.
-              </li>
-              <li className=' text-justify'>
-              تمثل ألمانيا سوقًا مهمًا جدًا بالنسبة لنا، ونسعى إلى بناء شراكات قوية وطويلة الأمد مع الشركات الألمانية تقوم على الثقة المتبادلة، والشفافية، والنجاح المشترك.
-              </li>
-              <li className=' text-justify'>
-                إن هدفنا ليس تنفيذ شحنة واحدة فقط، بل إقامة علاقات تجارية مستدامة مع شركاء أعمال على المدى الطويل.
-              </li>
+            <p className="mb-6 text-lg text-gray-600">{content.intro}</p>
+            <ul className="flex flex-col align-top items-start justify-start list-disc pl-6 text-left space-y-3">
+              {content.bullets.map((bullet) => (
+                <li key={bullet} className="text-justify text-gray-600">
+                  {bullet}
+                </li>
+              ))}
             </ul>
           </motion.p>
 
           {/* Pillars grid */}
           <motion.div variants={containerVariants} className="grid grid-cols-2 gap-4">
-            {pillars.map(({ icon: Icon, title, titleAr, desc }) => (
+            {pillars.map(({ icon: Icon, title, titleAr, desc, descAr }) => (
               <motion.div
                 key={title}
                 variants={itemVariants}
@@ -120,9 +138,10 @@ export default function About() {
                 <div className="w-10 h-10 rounded-xl bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center mb-3 transition-colors">
                   <Icon size={20} className="text-brand-600" />
                 </div>
-                <div className="font-semibold text-navy-800 text-sm mb-0.5">{title}</div>
-                <div className="text-brand-500 text-xs font-arabic mb-2">{titleAr}</div>
-                <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
+                <div className={`font-semibold text-navy-800 text-sm mb-0.5 ${language === 'ar' ? 'font-arabic' : ''}`}>
+                  {language === 'en' ? title : titleAr}
+                </div>
+                <p className="text-gray-500 text-xs leading-relaxed">{language === 'en' ? desc : descAr}</p>
               </motion.div>
             ))}
           </motion.div>

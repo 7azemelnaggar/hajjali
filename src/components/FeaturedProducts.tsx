@@ -47,12 +47,31 @@ const featured = [
   },
 ];
 
-export default function FeaturedProducts() {
+interface FeaturedProductsProps {
+  language: 'en' | 'ar';
+}
+
+export default function FeaturedProducts({ language }: FeaturedProductsProps) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
   const [active, setActive] = useState(0);
 
   const product = featured[active];
+  const content = language === 'en'
+    ? {
+        eyebrow: 'Featured Products — منتجات مميزة',
+        title: <>Our <span className="text-gradient">Signature Range</span></>,
+        subtitle: 'Our featured collection',
+        request: 'Request Quote',
+        learn: 'Learn More',
+      }
+    : {
+        eyebrow: 'منتجات مميزة — Featured Products',
+        title: <><span className="text-gradient">مجموعة</span> مميزة</>,
+        subtitle: 'تشكيلتنا المميزة',
+        request: 'اطلب عرض سعر',
+        learn: 'اعرف المزيد',
+      };
 
   return (
     <section className="section-padding bg-cream-50 relative overflow-hidden">
@@ -68,14 +87,13 @@ export default function FeaturedProducts() {
         >
           <span className="section-label justify-center">
             <span className="w-6 h-0.5 bg-brand-500 inline-block" />
-            Featured Products — منتجات مميزة
+            {content.eyebrow}
             <span className="w-6 h-0.5 bg-brand-500 inline-block" />
           </span>
           <h2 className="font-sans text-4xl lg:text-5xl font-bold text-navy-800 mb-3">
-            Our
-            <span className="text-gradient"> Signature Range</span>
+            {content.title}
           </h2>
-          <p className="font-arabic text-xl text-gray-400">تشكيلتنا المميزة</p>
+          <p className="font-arabic text-xl text-gray-400">{content.subtitle}</p>
         </motion.div>
 
         {/* Tab selectors */}
@@ -161,14 +179,14 @@ export default function FeaturedProducts() {
                     onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                     className="btn-primary"
                   >
-                    Request Quote
+                    {content.request}
                     <ArrowRight size={18} />
                   </button>
                   <button
                     onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                     className="btn-outline"
                   >
-                    Learn More
+                    {content.learn}
                   </button>
                 </div>
 

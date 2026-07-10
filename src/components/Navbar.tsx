@@ -1,19 +1,36 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Globe } from 'lucide-react';
 
-const navLinks = [
-  { label: 'Home', labelAr: '', href: '#hero' },
-  { label: 'About', labelAr: '', href: '#about' },
-  { label: 'Products', labelAr: '', href: '#products' },
-  { label: 'Services', labelAr: '', href: '#why-us' },
-  { label: 'Contact', labelAr: '', href: '#contact' },
-];
+interface NavbarProps {
+  language: 'en' | 'ar';
+  setLanguage: (value: 'en' | 'ar') => void;
+}
 
-export default function Navbar() {
+export default function Navbar({ language, setLanguage }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('#hero');
+
+  const navLinks =
+    language === 'en'
+      ? [
+          { label: 'Home', secondary: 'الرئيسية', href: '#hero' },
+          { label: 'About', secondary: 'اعرف عنا', href: '#about' },
+          { label: 'Products', secondary: 'المنتجات', href: '#products' },
+          { label: 'Services', secondary: 'الخدمات', href: '#why-us' },
+          { label: 'Contact', secondary: 'اتصل بنا', href: '#contact' },
+        ]
+      : [
+          { label: 'الرئيسية', secondary: 'Home', href: '#hero' },
+          { label: 'اعرف عنا', secondary: 'About', href: '#about' },
+          { label: 'المنتجات', secondary: 'Products', href: '#products' },
+          { label: 'الخدمات', secondary: 'Services', href: '#why-us' },
+          { label: 'اتصل بنا', secondary: 'Contact', href: '#contact' },
+        ];
+
+  const quickCallLabel = language === 'en' ? 'Quick Call' : 'مكالمة سريعة';
+  const toggleLabel = language === 'en' ? 'العربية' : 'English';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -74,12 +91,7 @@ export default function Navbar() {
                       : 'text-white/90 hover:text-white'
                   }`}
                 >
-                  <span>{link.label}</span>
-                  <span className={`block text-[10px] font-arabic transition-colors ${
-                    scrolled ? 'text-gray-400 group-hover:text-brand-400' : 'text-white/60 group-hover:text-white/80'
-                  }`}>
-                    {link.labelAr}
-                  </span>
+                  <span className={language === 'ar' ? 'font-arabic' : ''}>{link.label}</span>
                   {activeLink === link.href && (
                     <motion.div
                       layoutId="nav-indicator"
@@ -92,6 +104,18 @@ export default function Navbar() {
 
             {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+                className={`flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
+                  scrolled
+                    ? 'border-gray-200 bg-white text-gray-700 hover:border-brand-500 hover:text-brand-600'
+                    : 'border-white/40 bg-white/10 text-white hover:bg-white/20'
+                }`}
+              >
+                <Globe size={15} />
+                <span>{toggleLabel}</span>
+              </button>
               <a
                 href="tel:+213XXXXXXXXX"
                 className={`flex items-center gap-2 text-sm font-medium transition-colors ${
@@ -99,25 +123,32 @@ export default function Navbar() {
                 }`}
               >
                 <Phone size={15} />
-                <span>Quick Call</span>
+                <span>{quickCallLabel}</span>
               </a>
-              <button
-                onClick={() => handleNav('#contact')}
-                className="btn-primary text-sm py-2.5 px-6"
-              >
-                Get a Quote
-              </button>
             </div>
 
             {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors ${
-                scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
-              }`}
-            >
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
+            <div className="flex items-center gap-2 md:hidden">
+              <button
+                type="button"
+                onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+                className={`rounded-full border px-2.5 py-2 text-xs font-medium transition-colors ${
+                  scrolled
+                    ? 'border-gray-200 bg-white text-gray-700'
+                    : 'border-white/40 bg-white/10 text-white'
+                }`}
+              >
+                {toggleLabel}
+              </button>
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className={`p-2 rounded-lg transition-colors ${
+                  scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+                }`}
+              >
+                {menuOpen ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -146,18 +177,9 @@ export default function Navbar() {
                       : 'text-gray-700 hover:bg-cream-100'
                   }`}
                 >
-                  <span className="font-medium">{link.label}</span>
-                  <span className="font-arabic text-sm text-gray-400">{link.labelAr}</span>
+                  <span className={`font-medium ${language === 'ar' ? 'font-arabic' : ''}`}>{link.label}</span>
                 </motion.button>
               ))}
-              <div className="pt-3 border-t border-cream-200 mt-2">
-                <button
-                  onClick={() => handleNav('#contact')}
-                  className="btn-primary w-full justify-center"
-                >
-                  Get a Quote
-                </button>
-              </div>
             </div>
           </motion.div>
         )}

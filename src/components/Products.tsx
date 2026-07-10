@@ -268,82 +268,102 @@ const products = [
   {
     name: 'Fava Beans',
     nameAr: 'الفول',
-    desc: 'ويعدّ من أكثر أنواع البقوليات شعبية خاصّة في مصر وبلاد الشام ويحضّر منه الكثير من الأطباق. وتقدم شركه الطباخ انواع عده منه معبأه ومفروزة اليا فى محتوى عبوة 25 كيلو.',
+    desc: 'A staple legume valued for its rich flavor, versatility, and strong presence in traditional dishes.',
+    descAr: 'بقوليات أساسية تُقدر بنكهتها الغنية وتعدد استخداماتها ووجودها القوي في الأطباق التقليدية.',
     image: 'https://i.postimg.cc/13jkqXjK/fava-beans.jpg',
     color: 'from-amber-600 to-amber-800',
-    types: ['فول صحيح انجليزي', 'فول صحيح استرالي', 'مجروش استرالي', 'مجروش ليتواني', 'مجروش فص'],
+    types: ['English fava beans', 'Australian fava beans', 'Crushed Australian beans', 'Lithuanian crushed beans', 'Split crushed beans'],
+    typesAr: ['فول إنجليزي', 'فول أسترالي', 'فول مجروش أسترالي', 'فول مجروش ليتواني', 'فول مجروش فص'],
   },
   {
     name: 'Crushed Fava Beans',
     nameAr: 'فول مجروش',
-    desc: 'ويعدّ من أكثر أنواع البقوليات شعبية خاصّة في مصر وبلاد الشام ويحضّر منه الكثير من الأطباق. وتقدم شركه الطباخ انواع عده منه معبأه ومفروزة اليا فى محتوى عبوة 25 كيلو.',
+    desc: 'Finely processed for quick cooking, soups, and classic recipes with a smooth texture.',
+    descAr: 'مُعالجة بدقة للطبخ السريع والحساء والوصفات التقليدية مع قوام ناعم.',
     image: 'https://i.postimg.cc/ZRkXwgZY/crushed-fava-beans.jpg',
     color: 'from-stone-500 to-stone-700',
     types: [],
+    typesAr: [],
   },
   {
     name: 'Yellow Pulp',
-    nameAr: 'لب سوبر',
-    desc: 'يستمد اللب الابيض فوائده من العناصر الغذائية الرائعة التي توجد به. فهو غني بالفيتامينات والمعادن الضرورية للوظائف الحيوية للجسم.',
+    nameAr: 'لب أصفر',
+    desc: 'A fresh ingredient known for its natural taste and dependable quality in everyday meals.',
+    descAr: 'مكوّن طازج يُعرف بنكهته الطبيعية وجودته الموثوقة في الوجبات اليومية.',
     image: 'https://i.postimg.cc/kGP7MTLz/Whats-App-Image-2026-07-05-at-4-20-25-PM.jpg',
     color: 'from-yellow-600 to-yellow-800',
     types: [],
+    typesAr: [],
   },
   {
     name: 'White Beans',
-    nameAr: 'الفاصوليا البيضا',
-    desc: 'تعد الفاصوليا البيضاء من اهم البقوليات بسب قيمتها الغذائية العالية فهي معبأة بحمض الفوليك والبروتين والكربوهيدرات والألياف.',
+    nameAr: 'فاصوليا بيضاء',
+    desc: 'Nutritious and filling, white beans are a practical choice for healthy, balanced cooking.',
+    descAr: 'غنية ومشبعة، وهي خيار عملي للطهي الصحي والمتوازن.',
     image: 'https://i.postimg.cc/3wxsyp1T/pexels-enginakyurt-10111852.jpg',
     color: 'from-neutral-400 to-neutral-600',
     types: [],
+    typesAr: [],
   },
   {
     name: 'Rice',
     nameAr: 'أرز',
-    desc: 'الأرز الأبيض هو واحد من أشهر الأصناف التي تدخل في عديدٍ من الأطباق العربيّة المختلفة. وتقدم الشركه معبأ ومفروز أليا فى محتوى عبوة 25 كيلوجرام.',
+    desc: 'Premium rice selected for consistent quality, easy preparation, and excellent results in a range of dishes.',
+    descAr: 'أرز متميز يُختار لضمان الجودة المتسقة وسهولة التحضير ونتائج ممتازة في مجموعة متنوعة من الأطباق.',
     image: 'https://i.postimg.cc/W1brxbS7/pexels-maddyfreddie-7851798.jpg',
     color: 'from-yellow-700 to-amber-900',
-    types: ['ارز مصرى كاملينو 2 (منقى الكترونيا ومعبأ اليا)', 'ارز مصرى (منقى الكترونيا ومعالج بالبخار)'],
+    types: ['Egyptian rice fullino 2', 'Egyptian rice steam processed'],
+    typesAr: ['أرز مصري فولينو 2', 'أرز مصري معالجة بالبخار'],
   },
   {
     name: 'Black-eyed Peas',
     nameAr: 'لوبيا بلدي',
-    desc: 'اللوبيا هو نوع من البقوليات والتي يكون لها هيكل بيضاوي قليلا مع العين السوداء وتحظى بشعبية على نطاق واسع لنكهتها الطيبة.',
+    desc: 'A versatile legume with a mild flavor and a long-standing place in home cooking.',
+    descAr: 'بقوليات متعددة الاستخدامات بنكهة خفيفة ومكانة راسخة في الطهي المنزلي.',
     image: 'https://i.postimg.cc/MTPV6kTp/Black-eyed-peas.webp',
     color: 'from-yellow-400 to-yellow-600',
     types: [],
+    typesAr: [],
   },
   {
     name: 'Sweet Lupins',
     nameAr: 'ترمس حلو',
-    desc: 'نبات الترمس هو نبات من الفصيلة البقولية، وتعود أصوله إلى دول البحر المتوسط. هو عبارة عن بذور جافة تزرع في مصر وسوريا وفلسطين والأردن ولبنان.',
+    desc: 'A wholesome seed with a distinctive taste and broad culinary applications.',
+    descAr: 'بذور صحية بنكهة مميزة وتطبيقات طهي واسعة.',
     image: 'https://i.postimg.cc/xTSTXxbF/sweet-lupin.webp',
     color: 'from-orange-600 to-red-800',
     types: [],
+    typesAr: [],
   },
   {
     name: 'Prepared Peanuts',
-    nameAr: 'فول سوداني مجهز',
-    desc: 'الفول السوداني هو من المحاصيل الصيفية ينتمي إلى البقوليات ذوات الفلقتين. وتقدم الشركه معبأ ومفروز أليا فى محتوى عبوة 25 كيلو.',
+    nameAr: 'فول سوداني جاهز',
+    desc: 'Carefully prepared peanuts that add texture and flavor to snacks and meals.',
+    descAr: 'فول سوداني جاهز بعناية يضيف قوامًا ونكهة لوجبات والوجبات الخفيفة.',
     image: 'https://i.postimg.cc/pTtffHjx/Whats-App-Image-2026-07-05-at-4-10-30-PM.jpg',
     color: 'from-teal-600 to-teal-800',
     types: [],
+    typesAr: [],
   },
   {
     name: 'Cumin',
-    nameAr: 'كراوية',
-    desc: 'الكراويه من النباتات العطريه التى لها شهرة واسعه فى مصر والوطن العربى وتستخدم في صناعة الجبن والفطائر والحلويات والخبز والكيك.',
+    nameAr: 'كمون',
+    desc: 'A fragrant spice used to bring warmth and depth to both savory dishes and baked goods.',
+    descAr: 'توابل عطرية تُستخدم لإضفاء الدفء والعمق على الأطباق المالحة والمخبوزات.',
     image: 'https://i.postimg.cc/d33PzC7y/product-10.png',
     color: 'from-teal-600 to-teal-800',
     types: [],
+    typesAr: [],
   },
   {
     name: 'Fenugreek',
-    nameAr: 'حلبة بلدي',
-    desc: 'من اهم النباتات الموجودة على الأرض تتبع الحلبة فصيلة البقوليات. الحلبة نبات أصفر اللون وهي بذور كما أنها نبات قديم.',
+    nameAr: 'حلبة',
+    desc: 'A traditional herb with a distinctive aroma and a valued role in many recipes.',
+    descAr: 'عشب تقليدي بنكهة مميزة ودور قيم في العديد من الوصفات.',
     image: 'https://i.postimg.cc/c1bVvrtZ/product-11.png',
     color: 'from-teal-600 to-teal-800',
     types: [],
+    typesAr: [],
   },
 ];
 
@@ -351,9 +371,11 @@ interface Product {
   name: string;
   nameAr: string;
   desc: string;
+  descAr: string;
   image: string;
   color: string;
   types: string[];
+  typesAr: string[];
 }
 
 const getDescLimit = (desc: string) => {
@@ -363,11 +385,9 @@ const getDescLimit = (desc: string) => {
 
 // Fastest possible spring — feels instant but still has motion
 const popupVariants = {
-  hidden:  { opacity: 0, scale: 0.96, y: 16 },
-  visible: { opacity: 1, scale: 1,    y: 0,
-    transition: { duration: 0.15, ease: 'easeOut' } },
-  exit:    { opacity: 0, scale: 0.96, y: 8,
-    transition: { duration: 0.1,  ease: 'easeIn' } },
+  hidden: { opacity: 0, scale: 0.96, y: 16 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.15 } },
+  exit: { opacity: 0, scale: 0.96, y: 8, transition: { duration: 0.1 } },
 };
 
 const backdropVariants = {
@@ -376,7 +396,11 @@ const backdropVariants = {
   exit:    { opacity: 0, transition: { duration: 0.1  } },
 };
 
-export default function Products() {
+interface ProductsProps {
+  language: 'en' | 'ar';
+}
+
+export default function Products({ language }: ProductsProps) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [showAll, setShowAll] = useState(false);
   const ref = useRef(null);
@@ -384,6 +408,30 @@ export default function Products() {
 
   const featuredProducts = products.slice(0, 4);
   const remainingProducts = products.slice(4);
+
+  const getDisplayName = (product: Product) => language === 'ar' ? product.nameAr : product.name;
+  const getDisplayDesc = (product: Product) => language === 'ar' ? product.descAr : product.desc;
+  const getDisplayTypes = (product: Product) => language === 'ar' ? product.typesAr : product.types;
+
+  const content = language === 'en'
+    ? {
+        eyebrow: 'Our Products — منتجاتنا',
+        title: <>Featured <span className="text-gradient">Selection</span></>,
+        subtitle: 'Nature’s finest, carefully chosen',
+        description: 'From field to table — every product in our catalog is sourced from trusted farms and processed to the highest food safety standards.',
+        bestSeller: 'Best Seller',
+        availableTypes: 'Available Types',
+        showMore: 'Show More',
+      }
+    : {
+        eyebrow: 'منتجاتنا — Our Products',
+        title: <><span className="text-gradient">اختيار</span> مميز</>,
+        subtitle: 'خير الطبيعة، بعناية واختيار',
+        description: 'من المزرعة إلى المائدة — كل منتج في كتالوجنا يأتي من مزارع موثوقة ويُعالج وفق أعلى معايير سلامة الغذاء.',
+        bestSeller: 'الأكثر مبيعا',
+        availableTypes: 'الأنواع المتاحة',
+        showMore: 'عرض المزيد',
+      };
 
   const openPopup  = (product: Product) => setSelectedProduct(product);
   const closePopup = () => setSelectedProduct(null);
@@ -433,11 +481,8 @@ export default function Products() {
                   {/* Title over image */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="font-display text-2xl font-bold text-white leading-tight">
-                      {selectedProduct.name}
+                      {getDisplayName(selectedProduct)}
                     </h3>
-                    <p className="font-arabic text-brand-300 text-base mt-0.5">
-                      {selectedProduct.nameAr}
-                    </p>
                   </div>
 
                   {/* Close button */}
@@ -452,19 +497,19 @@ export default function Products() {
                 {/* Body */}
                 <div className="p-6" dir="ltr">
                   <p className="text-gray-600 leading-relaxed text-sm mb-5 font-arabic text-left">
-                    {selectedProduct.desc}
+                    {getDisplayDesc(selectedProduct)}
                   </p>
 
-                  {selectedProduct.types.length > 0 && (
+                  {getDisplayTypes(selectedProduct).length > 0 && (
                     <div className="bg-cream-50 border border-cream-200 rounded-2xl p-4">
                       <div className="flex items-center gap-2 mb-3">
                         <Package size={15} className="text-brand-500" />
                         <span className="text-xs font-bold uppercase tracking-wider text-brand-600">
-                          الأنواع المتاحة
+                          {content.availableTypes}
                         </span>
                       </div>
                       <ul className="space-y-2">
-                        {selectedProduct.types.map((type, i) => (
+                        {getDisplayTypes(selectedProduct).map((type, i) => (
                           <li key={i} className="flex items-center gap-2.5 text-sm text-gray-700 font-arabic">
                             <span className="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0" />
                             {type}
@@ -492,17 +537,15 @@ export default function Products() {
         >
           <span className="section-label justify-center">
             <span className="w-6 h-0.5 bg-brand-500 inline-block" />
-            Our Products — منتجاتنا
+            {content.eyebrow}
             <span className="w-6 h-0.5 bg-brand-500 inline-block" />
           </span>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-navy-800 mb-3">
-            Featured
-            <span className="text-gradient"> Selection</span>
+            {content.title}
           </h2>
-          <p className="font-arabic text-xl text-gray-400 mb-4">خير الطبيعة، بعناية واختيار</p>
+          <p className="font-arabic text-xl text-gray-400 mb-4">{content.subtitle}</p>
           <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
-            From field to table — every product in our catalog is sourced from trusted
-            farms and processed to the highest food safety standards.
+            {content.description}
           </p>
         </motion.div>
 
@@ -538,20 +581,19 @@ export default function Products() {
                     <div className={`absolute inset-0 bg-gradient-to-t ${product.color} opacity-20 group-hover:opacity-30 transition-opacity`} />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <span className="absolute top-3 right-3 bg-brand-500 text-white text-[11px] font-semibold uppercase tracking-[0.08em] px-2.5 py-1 rounded-full shadow-lg">
-                      الأكثر مبيعا
+                      {content.bestSeller}
                     </span>
                   </div>
                   <div className="p-5">
                     <div className="flex items-start justify-between mb-2">
                       <div>
-                        <h3 className="font-display font-bold text-navy-800 text-lg leading-tight">{product.name}</h3>
-                        <p className="font-arabic text-brand-500 text-sm">{product.nameAr}</p>
+                        <h3 className="font-display font-bold text-navy-800 text-lg leading-tight">{getDisplayName(product)}</h3>
                       </div>
                       <div className="w-8 h-8 rounded-full bg-cream-100 group-hover:bg-brand-500 flex items-center justify-center transition-colors mt-1 shrink-0">
                         <ArrowRight size={14} className="text-gray-400 group-hover:text-white transition-colors" />
                       </div>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{getDescLimit(product.desc)}</p>
+                    <p className="text-gray-500 text-sm leading-relaxed">{getDescLimit(getDisplayDesc(product))}</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -593,14 +635,13 @@ export default function Products() {
                 <div className="p-5">
                   <div className="flex items-start justify-between mb-2">
                     <div>
-                      <h3 className="font-display font-bold text-navy-800 text-lg leading-tight">{product.name}</h3>
-                      <p className="font-arabic text-brand-500 text-sm">{product.nameAr}</p>
+                      <h3 className="font-display font-bold text-navy-800 text-lg leading-tight">{getDisplayName(product)}</h3>
                     </div>
                     <div className="w-8 h-8 rounded-full bg-cream-100 group-hover:bg-brand-500 flex items-center justify-center transition-colors mt-1 shrink-0">
                       <ArrowRight size={14} className="text-gray-400 group-hover:text-white transition-colors" />
                     </div>
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed">{getDescLimit(product.desc)}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed">{getDescLimit(getDisplayDesc(product))}</p>
                 </div>
               </motion.div>
             ))}
@@ -619,8 +660,8 @@ export default function Products() {
               onClick={() => setShowAll(true)}
               className="btn-primary"
             >
-              Show More
-              <ArrowLeft size={18} />
+              {content.showMore}
+              {language === 'en' ? <ArrowRight size={18} /> : <ArrowLeft size={18} />}
             </button>
           </motion.div>
         )}

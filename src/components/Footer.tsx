@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, MessageCircle, Facebook, Instagram, Twitter, Youtube, ArrowUp, Wheat } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Facebook, Instagram, Twitter, Youtube, ArrowUp } from 'lucide-react';
 
 const quickLinks = [
   { label: 'Home', labelAr: 'الرئيسية', href: '#hero' },
@@ -9,15 +9,6 @@ const quickLinks = [
   { label: 'Contact', labelAr: 'تواصل معنا', href: '#contact' },
 ];
 
-const productLinks = [
-  { label: 'Lentils', labelAr: 'العدس' },
-  { label: 'Beans', labelAr: 'الفاصوليا' },
-  { label: 'Chickpeas', labelAr: 'الحمص' },
-  { label: 'Rice', labelAr: 'الأرز' },
-  { label: 'Wheat', labelAr: 'القمح' },
-  { label: 'Herbs & Spices', labelAr: 'البهارات' },
-];
-
 const socials = [
   { icon: Facebook, href: '#', label: 'Facebook' },
   { icon: Instagram, href: '#', label: 'Instagram' },
@@ -25,13 +16,37 @@ const socials = [
   { icon: Youtube, href: '#', label: 'YouTube' },
 ];
 
-export default function Footer() {
+interface FooterProps {
+  language: 'en' | 'ar';
+}
+
+export default function Footer({ language }: FooterProps) {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const handleNav = (href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const content = language === 'en'
+    ? {
+        description: 'Premium grains, legumes, rice, and traditional pantry products. Trusted by families and businesses.',
+        quickLinks: 'Quick Links',
+        products: 'Products',
+        contact: 'Contact',
+        privacy: 'Privacy Policy',
+        terms: 'Terms of Service',
+        rights: 'All rights reserved.',
+      }
+    : {
+        description: 'حبوب وبقوليات وأرز ومنتجات مطبخ تقليدية عالية الجودة. موثوقة من قبل العائلات والشركات.',
+        quickLinks: 'روابط سريعة',
+        products: 'منتجاتنا',
+        contact: 'تواصل',
+        privacy: 'سياسة الخصوصية',
+        terms: 'شروط الاستخدام',
+        rights: 'جميع الحقوق محفوظة.',
+      };
 
   return (
     <footer className="bg-navy-900 text-white relative overflow-hidden">
@@ -54,15 +69,14 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <button onClick={() => handleNav('#hero')} className="flex items-center gap-3 mb-5 group">
               <img
-                src="https://i.postimg.cc/2rMdyGvp/haj-ali-removebg-preview.png"
+                src="https://i.postimg.cc/9fXhfnQq/logo.png"
                 alt="Haj Ali"
                 className="h-16 w-auto object-contain group-hover:opacity-80 transition-opacity"
               />
             </button>
 
             <p className="text-navy-300 text-sm leading-relaxed mb-5">
-              Premium grains, legumes, rice, and traditional pantry products.
-              Trusted by families and businesses.
+              {content.description}
             </p>
 
             {/* Social */}
@@ -82,9 +96,8 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h4 className="font-display font-bold text-white mb-5 flex items-center gap-2">
-              Quick Links
-              <span className="font-arabic text-brand-400 font-normal text-sm">روابط سريعة</span>
+            <h4 className={`font-display font-bold text-white mb-5 flex items-center gap-2 ${language === 'ar' ? 'font-arabic' : ''}`}>
+              {content.quickLinks}
             </h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -94,30 +107,7 @@ export default function Footer() {
                     className="flex items-center gap-2 text-navy-300 hover:text-brand-400 transition-colors text-sm group"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-600 group-hover:bg-brand-400 transition-colors" />
-                    <span>{link.label}</span>
-                    <span className="font-arabic text-navy-500 group-hover:text-brand-500 text-xs">— {link.labelAr}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Products */}
-          <div>
-            <h4 className="font-display font-bold text-white mb-5 flex items-center gap-2">
-              Products
-              <span className="font-arabic text-brand-400 font-normal text-sm">منتجاتنا</span>
-            </h4>
-            <ul className="space-y-3">
-              {productLinks.map((p) => (
-                <li key={p.label}>
-                  <button
-                    onClick={() => handleNav('#products')}
-                    className="flex items-center gap-2 text-navy-300 hover:text-brand-400 transition-colors text-sm group"
-                  >
-                    <Wheat size={12} className="text-brand-600 group-hover:text-brand-400 flex-shrink-0" />
-                    <span>{p.label}</span>
-                    <span className="font-arabic text-navy-500 group-hover:text-brand-500 text-xs">— {p.labelAr}</span>
+                    <span className={language === 'ar' ? 'font-arabic' : ''}>{language === 'en' ? link.label : link.labelAr}</span>
                   </button>
                 </li>
               ))}
@@ -126,30 +116,29 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-bold text-white mb-5 flex items-center gap-2">
-              Contact
-              <span className="font-arabic text-brand-400 font-normal text-sm">تواصل</span>
+            <h4 className={`font-display font-bold text-white mb-5 flex items-center gap-2 ${language === 'ar' ? 'font-arabic' : ''}`}>
+              {content.contact}
             </h4>
             <div className="space-y-4">
               <a href="https://wa.me/201008626066" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-navy-300 hover:text-brand-400 transition-colors group">
                 <MessageCircle size={16} className="mt-0.5 flex-shrink-0 text-brand-600 group-hover:text-brand-400" />
                 <div>
                   <div className="text-sm" dir="ltr">+20 100 862 6066</div>
-                  <div className="font-arabic text-xs text-navy-500">واتساب</div>
+                  <div className="font-arabic text-xs text-navy-500">WhatsApp</div>
                 </div>
               </a>
               <a href="tel:+201271355585" className="flex items-start gap-3 text-navy-300 hover:text-brand-400 transition-colors group">
                 <Phone size={16} className="mt-0.5 flex-shrink-0 text-brand-600 group-hover:text-brand-400" />
                 <div>
                   <div className="text-sm" dir="ltr">+20 127 135 5585</div>
-                  <div className="font-arabic text-xs text-navy-500">الهاتف</div>
+                  <div className="font-arabic text-xs text-navy-500">Phone</div>
                 </div>
               </a>
               <a href="mailto:info@hajjali.com" className="flex items-start gap-3 text-navy-300 hover:text-brand-400 transition-colors group">
                 <Mail size={16} className="mt-0.5 flex-shrink-0 text-brand-600 group-hover:text-brand-400" />
                 <div>
                   <div className="text-sm">info@hajjali.com</div>
-                  <div className="font-arabic text-xs text-navy-500">البريد الإلكتروني</div>
+                  <div className="font-arabic text-xs text-navy-500">Email</div>
                 </div>
               </a>
               <a
@@ -160,8 +149,8 @@ export default function Footer() {
               >
                 <MapPin size={16} className="mt-0.5 flex-shrink-0 text-brand-600 group-hover:text-brand-400" />
                 <div>
-                  <div className="text-sm">Industrial Zone - Ferhash - Hosh Issa - Elbeheira - Egypt</div>
-                  <div className="font-arabic text-xs text-navy-500">المنطقة الصناعية - حوش عيسى - البحيرة</div>
+                  <div className="text-sm">Industrial Zone Hosh Issa - ElBeheira</div>
+                  <div className="font-arabic text-xs text-navy-500">المنطقة الصناعية بحوش عيسى - البحيرة</div>
                 </div>
               </a>
             </div>
@@ -171,17 +160,15 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-navy-400 text-sm text-center sm:text-left">
-            © 2026 <span className="font-arabic">حاج علي</span> Haj Ali. All rights reserved.
-            <span className="mx-2 text-navy-600">·</span>
-            <span className="font-arabic">جميع الحقوق محفوظة</span>
+            {language === 'en'
+              ? '© 2026 Haj Ali. All rights reserved'
+              : 'جميع الحقوق محفوظه حاج علي 2026 ©'}
           </div>
 
           <div className="flex items-center gap-4 text-navy-500 text-xs">
-            <span>Privacy Policy</span>
+            <span className={language === 'ar' ? 'font-arabic' : ''}>{language === 'en' ? content.privacy : 'Privacy Policy'}</span>
             <span className="w-1 h-1 bg-navy-600 rounded-full" />
-            <span>Terms of Service</span>
-            <span className="w-1 h-1 bg-navy-600 rounded-full" />
-            <span className="font-arabic">سياسة الخصوصية</span>
+            <span className={language === 'ar' ? 'font-arabic' : ''}>{language === 'en' ? content.terms : 'Terms of Service'}</span>
           </div>
         </div>
       </div>
