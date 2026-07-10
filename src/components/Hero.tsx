@@ -195,6 +195,10 @@ import 'swiper/css/scrollbar';
 
 const slides = [
   {
+    image: 'https://res.cloudinary.com/dyissekq4/image/upload/v1783695146/AHajAliProductsi_xq1lhz.png',
+    overlay: 'from-green-950/80 via-black/55 to-black/40',
+  },
+  {
     image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920',
     overlay: 'from-black/80 via-black/55 to-black/40',
   },
@@ -205,11 +209,7 @@ const slides = [
   {
     image: 'https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=1920',
     overlay: 'from-stone-900/80 via-black/55 to-black/40',
-  },
-  {
-    image: 'https://images.pexels.com/photos/4198019/pexels-photo-4198019.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    overlay: 'from-green-950/80 via-black/55 to-black/40',
-  },
+  }
 ];
 
 const stats = [
