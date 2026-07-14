@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import Products from './components/Products';
 import About from './components/About';
 import WhyChooseUs from './components/WhyChooseUs';
-import FeaturedProducts from './components/FeaturedProducts';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CategoryPage from './components/CategoryPage';
@@ -18,7 +17,6 @@ function HomePage({ language }: { language: 'en' | 'ar' }) {
       <Products language={language} />
       <About language={language} />
       <WhyChooseUs language={language} />
-      <FeaturedProducts language={language} />
       <Contact language={language} />
     </>
   );
