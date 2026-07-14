@@ -53,6 +53,20 @@ export const categories: Category[] = [
     image: 'https://res.cloudinary.com/dyissekq4/image/upload/v1784032892/Spices_p1cuzn.jpg',
     color: 'from-teal-700 to-teal-900',
   },
+  {
+    slug: 'herbs',
+    name: 'Herbs',
+    nameAr: 'أعشاب',
+    image: 'https://res.cloudinary.com/dyissekq4/image/upload/v1784039444/Herbs_ldahsd.webp',
+    color: 'from-teal-700 to-teal-900',
+  },
+  {
+    slug: 'dates',
+    name: 'Dates',
+    nameAr: 'تمر',
+    image: 'https://res.cloudinary.com/dyissekq4/image/upload/v1784039611/dates_cqikzw.jpg',
+    color: 'from-teal-700 to-teal-900',
+  },
 ];
 
 /* ── Products ───────────────────────────────────────────────── */

@@ -73,25 +73,25 @@ export default function WhyChooseUs({ language }: WhyChooseUsProps) {
 
   const content = language === 'en'
     ? {
-        eyebrow: 'Why Choose Us — لماذا تختارنا',
-        heading: <>The Haj Ali <span className="text-brand-400">Difference</span></>,
-        subtitle: 'What makes Haj Ali unique',
-        description: 'We don\'t just sell grains — we deliver trust, quality, and a commitment to nourishing families with the best nature has to offer.',
-        ctaTitle: 'Ready to partner with Haj Ali?',
-        ctaSubtitle: 'هل أنت مستعد للشراكة مع حاج علي؟',
-        ctaText: 'Get wholesale pricing and bulk supply agreements today.',
-        ctaButton: 'Contact Us Now',
-      }
+      eyebrow: 'Why Choose Us — لماذا تختارنا',
+      heading: <>The Haj Ali <span className="text-brand-400">Difference</span></>,
+      subtitle: 'What makes Haj Ali unique',
+      description: 'We don\'t just sell grains — we deliver trust, quality, and a commitment to nourishing families with the best nature has to offer.',
+      ctaTitle: 'Ready to partner with Haj Ali?',
+      ctaSubtitle: 'هل أنت مستعد للشراكة مع حاج علي؟',
+      ctaText: 'Get wholesale pricing and bulk supply agreements today.',
+      ctaButton: 'Contact Us Now',
+    }
     : {
-        eyebrow: 'لماذا تختارنا — Why Choose Us',
-        heading: <><span className="text-brand-400">الفرق</span> عند حاج علي</>,
-        subtitle: 'ما يميز حاج علي',
-        description: 'نحن لا نبيع الحبوب فقط — بل نقدم الثقة والجودة والتزامًا بتغذية العائلات بأفضل ما تقدمه الطبيعة.',
-        ctaTitle: 'هل أنت مستعد للشراكة مع حاج علي؟',
-        ctaSubtitle: 'Ready to partner with Haj Ali?',
-        ctaText: 'احصل على الأسعار الجملة واتفاقيات التوريد بالجملة اليوم.',
-        ctaButton: 'تواصل معنا الآن',
-      };
+      eyebrow: 'لماذا تختارنا — Why Choose Us',
+      heading: <><span className="text-brand-400">الفرق</span> عند حاج علي</>,
+      subtitle: 'ما يميز حاج علي',
+      description: 'نحن لا نبيع الحبوب فقط — بل نقدم الثقة والجودة والتزامًا بتغذية العائلات بأفضل ما تقدمه الطبيعة.',
+      ctaTitle: 'هل أنت مستعد للشراكة مع حاج علي؟',
+      ctaSubtitle: 'Ready to partner with Haj Ali?',
+      ctaText: 'احصل على الأسعار الجملة واتفاقيات التوريد بالجملة اليوم.',
+      ctaButton: 'تواصل معنا الآن',
+    };
 
   return (
     <section id="why-us" className="section-padding relative overflow-hidden">
@@ -139,28 +139,29 @@ export default function WhyChooseUs({ language }: WhyChooseUsProps) {
             transition={{ duration: 0.7, delay: 0.7 }}
             src="/iso2.jpg" alt="ISO 2" className='h-72 hover:scale-105 transition-transform duration-300' />
         </div> */}
-        <div className="text-center mb-14 sm:flex-row flex flex-col sm:flex-row  items-center justify-center gap-6">
-          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-            <motion.img
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              src="https://i.postimg.cc/m25hgkk5/iso1-jpg.jpg"
-              alt="ISO 1"
-              className='h-72 object-cover cursor-pointer'
-            />
-          </motion.div>
-
-          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-            <motion.img
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.7 }}
-              src="https://i.postimg.cc/TPrP0c03/iso2-jpg.jpg"
-              alt="ISO 2"
-              className='h-72 object-cover cursor-pointer'
-            />
-          </motion.div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto items-center justify-items-center mb-14 px-4">
+          {[
+            { src: "https://res.cloudinary.com/dyissekq4/image/upload/v1784048329/ISO_9001_ddbka7.png", alt: "ISO 9001" },
+            { src: "https://res.cloudinary.com/dyissekq4/image/upload/v1784048536/circle-crop_uzyxgq.png", alt: "ISO 22000" },
+            { src: "https://res.cloudinary.com/dyissekq4/image/upload/v1784047641/Rounded-Kosher_eaecgi.png", alt: "Kosher" },
+            { src: "https://res.cloudinary.com/dyissekq4/image/upload/v1784047331/halal_pvxhqu.png", alt: "Halal" }
+          ].map((cert, index) => (
+            <motion.div
+              key={cert.alt}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/5 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/10 flex items-center justify-center w-full aspect-square max-w-[180px]"
+            >
+              <motion.img
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.3 + index * 0.1 }}
+                src={cert.src}
+                alt={cert.alt}
+                className='h-20 sm:h-28 w-auto object-contain cursor-pointer'
+              />
+            </motion.div>
+          ))}
         </div>
 
 

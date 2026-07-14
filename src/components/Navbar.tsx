@@ -19,19 +19,19 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
   const navLinks =
     language === 'en'
       ? [
-          { label: 'Home', secondary: 'الرئيسية', href: '#hero' },
-          { label: 'About', secondary: 'اعرف عنا', href: '#about' },
-          { label: 'Products', secondary: 'المنتجات', href: '#products' },
-          { label: 'Services', secondary: 'الخدمات', href: '#why-us' },
-          { label: 'Contact', secondary: 'اتصل بنا', href: '#contact' },
-        ]
+        { label: 'Home', secondary: 'الرئيسية', href: '#hero' },
+        { label: 'Products', secondary: 'المنتجات', href: '#products' },
+        { label: 'About', secondary: 'اعرف عنا', href: '#about' },
+        { label: 'Services', secondary: 'الخدمات', href: '#why-us' },
+        { label: 'Contact', secondary: 'اتصل بنا', href: '#contact' },
+      ]
       : [
-          { label: 'الرئيسية', secondary: 'Home', href: '#hero' },
-          { label: 'اعرف عنا', secondary: 'About', href: '#about' },
-          { label: 'المنتجات', secondary: 'Products', href: '#products' },
-          { label: 'الخدمات', secondary: 'Services', href: '#why-us' },
-          { label: 'اتصل بنا', secondary: 'Contact', href: '#contact' },
-        ];
+        { label: 'الرئيسية', secondary: 'Home', href: '#hero' },
+        { label: 'المنتجات', secondary: 'Products', href: '#products' },
+        { label: 'اعرف عنا', secondary: 'About', href: '#about' },
+        { label: 'الخدمات', secondary: 'Services', href: '#why-us' },
+        { label: 'اتصل بنا', secondary: 'Contact', href: '#contact' },
+      ];
 
   const quickCallLabel = language === 'en' ? 'Quick Call' : 'مكالمة سريعة';
   const toggleLabel = language === 'en' ? 'العربية' : 'English';
@@ -64,11 +64,10 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${scrolled
             ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-cream-200'
             : 'bg-transparent'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-18 py-3">
@@ -94,15 +93,14 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
                 <button
                   key={link.href}
                   onClick={() => handleNav(link.href)}
-                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 group ${
-                    scrolled
+                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 group ${scrolled
                       ? activeLink === link.href
                         ? 'text-brand-600'
                         : 'text-gray-600 hover:text-brand-600'
                       : activeLink === link.href
-                      ? 'text-brand-300'
-                      : 'text-white/90 hover:text-white'
-                  }`}
+                        ? 'text-brand-300'
+                        : 'text-white/90 hover:text-white'
+                    }`}
                 >
                   <span className={language === 'ar' ? 'font-arabic' : ''}>{link.label}</span>
                   {activeLink === link.href && (
@@ -120,20 +118,18 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
               <button
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
-                className={`flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
-                  scrolled
+                className={`flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium transition-colors ${scrolled
                     ? 'border-gray-200 bg-white text-gray-700 hover:border-brand-500 hover:text-brand-600'
                     : 'border-white/40 bg-white/10 text-white hover:bg-white/20'
-                }`}
+                  }`}
               >
                 <Globe size={15} />
                 <span>{toggleLabel}</span>
               </button>
               <a
                 href="tel:+213XXXXXXXXX"
-                className={`flex items-center gap-2 text-sm font-medium transition-colors ${
-                  scrolled ? 'text-gray-600 hover:text-brand-600' : 'text-white/80 hover:text-white'
-                }`}
+                className={`flex items-center gap-2 text-sm font-medium transition-colors ${scrolled ? 'text-gray-600 hover:text-brand-600' : 'text-white/80 hover:text-white'
+                  }`}
               >
                 <Phone size={15} />
                 <span>{quickCallLabel}</span>
@@ -145,19 +141,17 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
               <button
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
-                className={`rounded-full border px-2.5 py-2 text-xs font-medium transition-colors ${
-                  scrolled
+                className={`rounded-full border px-2.5 py-2 text-xs font-medium transition-colors ${scrolled
                     ? 'border-gray-200 bg-white text-gray-700'
                     : 'border-white/40 bg-white/10 text-white'
-                }`}
+                  }`}
               >
                 {toggleLabel}
               </button>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className={`p-2 rounded-lg transition-colors ${
-                  scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
-                }`}
+                className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+                  }`}
               >
                 {menuOpen ? <X size={22} /> : <Menu size={22} />}
               </button>
@@ -184,11 +178,10 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
                   onClick={() => handleNav(link.href)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-left transition-colors ${
-                    activeLink === link.href
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-left transition-colors ${activeLink === link.href
                       ? 'bg-brand-50 text-brand-600'
                       : 'text-gray-700 hover:bg-cream-100'
-                  }`}
+                    }`}
                 >
                   <span className={`font-medium ${language === 'ar' ? 'font-arabic' : ''}`}>{link.label}</span>
                 </motion.button>
