@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Globe } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 interface NavbarProps {
   language: 'en' | 'ar';
@@ -11,6 +12,9 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('#hero');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   const navLinks =
     language === 'en'
@@ -41,8 +45,17 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
   const handleNav = (href: string) => {
     setActiveLink(href);
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (isHome) {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Navigate to home page, then scroll to section
+      navigate('/');
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    }
   };
 
   return (

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, MessageCircle, Facebook, Instagram, Twitter, Youtube, ArrowUp } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const quickLinks = [
   { label: 'Home', labelAr: 'الرئيسية', href: '#hero' },
@@ -22,10 +23,21 @@ interface FooterProps {
 
 export default function Footer({ language }: FooterProps) {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   const handleNav = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (isHome) {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    }
   };
 
   const content = language === 'en'
