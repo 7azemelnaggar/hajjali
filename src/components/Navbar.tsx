@@ -65,8 +65,8 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${scrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-cream-200'
-            : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-cream-200'
+          : 'bg-transparent'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,7 +74,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
             {/* Logo */}
             <button onClick={() => handleNav('#hero')} className="flex items-center gap-3 group">
               <img
-                src="https://i.postimg.cc/9fXhfnQq/logo.png"
+                src="https://res.cloudinary.com/dyissekq4/image/upload/v1784895413/logo_z2zfph.png"
                 alt="Haj Ali"
                 className="h-14 w-auto object-contain group-hover:opacity-80 transition-opacity"
               />
@@ -94,12 +94,12 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
                   key={link.href}
                   onClick={() => handleNav(link.href)}
                   className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 group ${scrolled
-                      ? activeLink === link.href
-                        ? 'text-brand-600'
-                        : 'text-gray-600 hover:text-brand-600'
-                      : activeLink === link.href
-                        ? 'text-brand-300'
-                        : 'text-white/90 hover:text-white'
+                    ? activeLink === link.href
+                      ? 'text-brand-600'
+                      : 'text-gray-600 hover:text-brand-600'
+                    : activeLink === link.href
+                      ? 'text-brand-300'
+                      : 'text-white/90 hover:text-white'
                     }`}
                 >
                   <span className={language === 'ar' ? 'font-arabic' : ''}>{link.label}</span>
@@ -119,8 +119,8 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
                 className={`flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium transition-colors ${scrolled
-                    ? 'border-gray-200 bg-white text-gray-700 hover:border-brand-500 hover:text-brand-600'
-                    : 'border-white/40 bg-white/10 text-white hover:bg-white/20'
+                  ? 'border-gray-200 bg-white text-gray-700 hover:border-brand-500 hover:text-brand-600'
+                  : 'border-white/40 bg-white/10 text-white hover:bg-white/20'
                   }`}
               >
                 <Globe size={15} />
@@ -142,8 +142,8 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
                 className={`rounded-full border px-2.5 py-2 text-xs font-medium transition-colors ${scrolled
-                    ? 'border-gray-200 bg-white text-gray-700'
-                    : 'border-white/40 bg-white/10 text-white'
+                  ? 'border-gray-200 bg-white text-gray-700'
+                  : 'border-white/40 bg-white/10 text-white'
                   }`}
               >
                 {toggleLabel}
@@ -179,8 +179,8 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
                   transition={{ delay: i * 0.06 }}
                   onClick={() => handleNav(link.href)}
                   className={`flex items-center justify-between px-4 py-3 rounded-xl text-left transition-colors ${activeLink === link.href
-                      ? 'bg-brand-50 text-brand-600'
-                      : 'text-gray-700 hover:bg-cream-100'
+                    ? 'bg-brand-50 text-brand-600'
+                    : 'text-gray-700 hover:bg-cream-100'
                     }`}
                 >
                   <span className={`font-medium ${language === 'ar' ? 'font-arabic' : ''}`}>{link.label}</span>

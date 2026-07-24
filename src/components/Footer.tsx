@@ -42,30 +42,30 @@ export default function Footer({ language }: FooterProps) {
 
   const content = language === 'en'
     ? {
-        description: 'Premium grains, legumes, rice, and traditional pantry products. Trusted by families and businesses.',
-        quickLinks: 'Quick Links',
-        products: 'Products',
-        contact: 'Contact',
-        privacy: 'Privacy Policy',
-        terms: 'Terms of Service',
-        rights: 'All rights reserved.',
-      }
+      description: 'Premium grains, legumes, rice, and traditional pantry products. Trusted by families and businesses.',
+      quickLinks: 'Quick Links',
+      products: 'Products',
+      contact: 'Contact',
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Service',
+      rights: 'All rights reserved.',
+    }
     : {
-        description: 'حبوب وبقوليات وأرز ومنتجات مطبخ تقليدية عالية الجودة. موثوقة من قبل العائلات والشركات.',
-        quickLinks: 'روابط سريعة',
-        products: 'منتجاتنا',
-        contact: 'تواصل',
-        privacy: 'سياسة الخصوصية',
-        terms: 'شروط الاستخدام',
-        rights: 'جميع الحقوق محفوظة.',
-      };
+      description: 'حبوب وبقوليات وأرز ومنتجات مطبخ تقليدية عالية الجودة. موثوقة من قبل العائلات والشركات.',
+      quickLinks: 'روابط سريعة',
+      products: 'منتجاتنا',
+      contact: 'تواصل',
+      privacy: 'سياسة الخصوصية',
+      terms: 'شروط الاستخدام',
+      rights: 'جميع الحقوق محفوظة.',
+    };
 
   return (
     <footer className="bg-navy-900 text-white relative overflow-hidden">
       {/* Top wave */}
       <div className="absolute top-0 left-0 right-0">
         <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 0L1440 0V20C1200 50 960 60 720 50C480 40 240 10 0 20V0Z" fill="#F8F5F0"/>
+          <path d="M0 0L1440 0V20C1200 50 960 60 720 50C480 40 240 10 0 20V0Z" fill="#F8F5F0" />
         </svg>
       </div>
 
@@ -81,7 +81,7 @@ export default function Footer({ language }: FooterProps) {
           <div className="lg:col-span-1">
             <button onClick={() => handleNav('#hero')} className="flex items-center gap-3 mb-5 group">
               <img
-                src="https://i.postimg.cc/9fXhfnQq/logo.png"
+                src="https://res.cloudinary.com/dyissekq4/image/upload/v1784895413/logo_z2zfph.png"
                 alt="Haj Ali"
                 className="h-16 w-auto object-contain group-hover:opacity-80 transition-opacity"
               />

@@ -53,33 +53,33 @@ export default function About({ language }: AboutProps) {
 
   const content = language === 'en'
     ? {
-        eyebrow: 'Our Story — قصتنا',
-        heading: <>About <span className="text-gradient">Us</span></>,
-        intro: 'We are a trusted Egyptian company with more than 30 years of experience in sourcing, processing, and exporting agricultural products to markets around the world.',
-        bullets: [
-          'Haj Ali Company specializes in sorting, packing, importing, and exporting agricultural products.',
-          'We have built a strong reputation through reliable products, professional service, and long-term partnerships with clients worldwide.',
-          'We export around 50,000 metric tons annually, including lentils, chickpeas, broad beans, white beans, peanuts, lupins, rice, cumin, sunflower seeds, and more.',
-          'Quality is the foundation of our work, and we ensure every shipment meets strict standards and client expectations.',
-          'We consider our clients as long-term partners, and we value trust, transparency, competitive pricing, and punctual delivery.',
-          'Germany is one of our important markets, and we continue to build strong relationships with German partners based on mutual trust and shared success.',
-          'Our objective is not only to fulfill one shipment, but to build sustainable long-term business relationships.',
-        ],
-      }
+      eyebrow: 'Our Story — قصتنا',
+      heading: <>About <span className="text-gradient">Us</span></>,
+      intro: 'We are a trusted Egyptian company with more than 30 years of experience in sourcing, processing, and exporting agricultural products to markets around the world.',
+      bullets: [
+        'Haj Ali Company specializes in sorting, packing, importing, and exporting agricultural products.',
+        'We have built a strong reputation through reliable products, professional service, and long-term partnerships with clients worldwide.',
+        'We export around 50,000 metric tons annually, including lentils, chickpeas, broad beans, white beans, peanuts, lupins, rice, cumin, sunflower seeds, and more.',
+        'Quality is the foundation of our work, and we ensure every shipment meets strict standards and client expectations.',
+        'We consider our clients as long-term partners, and we value trust, transparency, competitive pricing, and punctual delivery.',
+        'Germany is one of our important markets, and we continue to build strong relationships with German partners based on mutual trust and shared success.',
+        'Our objective is not only to fulfill one shipment, but to build sustainable long-term business relationships.',
+      ],
+    }
     : {
-        eyebrow: 'قصتنا — Our Story',
-        heading: <><span className="text-gradient">من</span> نحن</>,
-        intro: 'نحن شركة مصرية موثوقة تتمتع بأكثر من 30 عامًا من الخبرة في توريد وتصنيع وتصدير المنتجات الزراعية إلى أسواق حول العالم.',
-        bullets: [
-          'تتخصص شركة الحاج علي في فرز وتعبئة واستيراد وتصدير المنتجات الزراعية.',
-          'لقد بنينا سمعة قوية من خلال منتجات موثوقة وخدمات مهنية وشراكات طويلة الأمد مع العملاء في جميع أنحاء العالم.',
-          'نصدر ما يقارب 50 ألف طن متري سنويًا تشمل العدس والحمص والفول العريض والفاصوليا البيضاء والفول السوداني والترمس والأرز والكراوية وبذور عباد الشمس وغير ذلك.',
-          'الجودة هي أساس عملنا، ونضمن أن كل شحنة تتوافق مع المعايير الصارمة وتوقعات العملاء.',
-          'نعتبر عملائنا شركاء طويل الأمد، ونعطي الأولوية للثقة والشفافية والأسعار التنافسية والتسليم في المواعيد.',
-          'ألمانيا من أهم الأسواق بالنسبة لنا، ونحن نعمل على بناء علاقات قوية مع الشركاء الألمان على أساس الثقة المتبادلة والنجاح المشترك.',
-          'هدفنا ليس مجرد تنفيذ شحنة واحدة، بل بناء علاقات تجارية مستدامة على المدى الطويل.',
-        ],
-      };
+      eyebrow: 'قصتنا — Our Story',
+      heading: <><span className="text-gradient">من</span> نحن</>,
+      intro: 'نحن شركة مصرية موثوقة تتمتع بأكثر من 30 عامًا من الخبرة في توريد وتصنيع وتصدير المنتجات الزراعية إلى أسواق حول العالم.',
+      bullets: [
+        'تتخصص شركة الحاج علي في فرز وتعبئة واستيراد وتصدير المنتجات الزراعية.',
+        'لقد بنينا سمعة قوية من خلال منتجات موثوقة وخدمات مهنية وشراكات طويلة الأمد مع العملاء في جميع أنحاء العالم.',
+        'نصدر ما يقارب 50 ألف طن متري سنويًا تشمل العدس والحمص والفول العريض والفاصوليا البيضاء والفول السوداني والترمس والأرز والكراوية وبذور عباد الشمس وغير ذلك.',
+        'الجودة هي أساس عملنا، ونضمن أن كل شحنة تتوافق مع المعايير الصارمة وتوقعات العملاء.',
+        'نعتبر عملائنا شركاء طويل الأمد، ونعطي الأولوية للثقة والشفافية والأسعار التنافسية والتسليم في المواعيد.',
+        'ألمانيا من أهم الأسواق بالنسبة لنا، ونحن نعمل على بناء علاقات قوية مع الشركاء الألمان على أساس الثقة المتبادلة والنجاح المشترك.',
+        'هدفنا ليس مجرد تنفيذ شحنة واحدة، بل بناء علاقات تجارية مستدامة على المدى الطويل.',
+      ],
+    };
 
   return (
     <section id="about" className="bg-cream-50 section-padding relative overflow-hidden">
@@ -102,12 +102,12 @@ export default function About({ language }: AboutProps) {
             </span>
           </motion.div>
 
-          <motion.h2 variants={itemVariants} className="font-display text-4xl lg:text-5xl font-bold text-navy-800 mb-2 leading-tight text-center">
+          <motion.h2 variants={itemVariants} className="font-sans text-4xl lg:text-5xl font-bold text-navy-800 mb-2 leading-tight text-center">
             {content.heading}
           </motion.h2>
 
           <motion.p variants={itemVariants} className="font-arabic text-xl text-gray-500 mb-6 leading-relaxed text-center">
-            
+
           </motion.p>
 
           <motion.p variants={itemVariants} className="text-gray-600 text-lg leading-relaxed mb-4 text-center">

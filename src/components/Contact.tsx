@@ -62,17 +62,17 @@ export default function Contact({ language }: ContactProps) {
 
   const content = language === 'en'
     ? {
-        eyebrow: 'Get In Touch — تواصل معنا',
-        title: <>Let's Start a <span className="text-gradient">Conversation</span></>,
-        subtitle: 'We would love to hear from you.',
-        description: 'Whether you\'re a retailer, wholesaler, or home buyer — we\'d love to hear from you. Our team responds within 24 hours.',
-      }
+      eyebrow: 'Get In Touch — تواصل معنا',
+      title: <>Let's Start a <span className="text-gradient">Conversation</span></>,
+      subtitle: 'We would love to hear from you.',
+      description: 'Whether you\'re a retailer, wholesaler, or home buyer — we\'d love to hear from you. Our team responds within 24 hours.',
+    }
     : {
-        eyebrow: 'تواصل معنا — Get In Touch',
-        title: <><span className="text-gradient">لنبدأ</span> محادثة</>,
-        subtitle: 'لنبدأ محادثة',
-        description: 'سواء كنت تاجرًا جملة أو تجزئة أو مشترٍ منزليًا — يسعدنا أن نسمع منك. فريقنا يستجيب خلال 24 ساعة.',
-      };
+      eyebrow: 'تواصل معنا — Get In Touch',
+      title: <><span className="text-gradient">لنبدأ</span> محادثة</>,
+      subtitle: 'لنبدأ محادثة',
+      description: 'سواء كنت تاجرًا جملة أو تجزئة أو مشترٍ منزليًا — يسعدنا أن نسمع منك. فريقنا يستجيب خلال 24 ساعة.',
+    };
 
   return (
     <section id="contact" className="section-padding bg-white relative overflow-hidden">
@@ -94,7 +94,7 @@ export default function Contact({ language }: ContactProps) {
             {content.eyebrow}
             <span className="w-6 h-0.5 bg-brand-500 inline-block" />
           </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-navy-800 mb-3">
+          <h2 className="font-sans text-4xl lg:text-5xl font-bold text-navy-800 mb-3">
             {content.title}
           </h2>
           <p className="font-arabic text-xl text-gray-400 mb-4">{content.subtitle}</p>
@@ -134,27 +134,27 @@ export default function Contact({ language }: ContactProps) {
                   </motion.a>
                 ))}
               </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Map */}
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            className="rounded-3xl overflow-hidden border border-cream-200 shadow-lg bg-cream-100 relative w-full max-w-[480px] mx-auto lg:mx-0 lg:justify-self-start aspect-[480/330]"
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.9897016283726!2d30.372999499999995!3d30.914912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f611f22823eff5%3A0x4049539f6475eb72!2z2LTYsdmD2Kkg2K3YrCDYudmE2Yog2YTZhNit2KfYtdmE2KfYqiDYp9mE2LLYsdin2LnZitmHINmIINin2YTYp9iz2KrZitix2KfYryDZiNin2YTYqti12K_Zitix!5e0!3m2!1sen!2seg!4v1783693500698!5m2!1sen!2seg"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="Haj Ali Location"
-              className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
-            />
-          </motion.div>
+            {/* Map */}
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              className="rounded-3xl overflow-hidden border border-cream-200 shadow-lg bg-cream-100 relative w-full max-w-[480px] mx-auto lg:mx-0 lg:justify-self-start aspect-[480/330]"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.9897016283726!2d30.372999499999995!3d30.914912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f611f22823eff5%3A0x4049539f6475eb72!2z2LTYsdmD2Kkg2K3YrCDYudmE2Yog2YTZhNit2KfYtdmE2KfYqiDYp9mE2LLYsdin2LnZitmHINmIINin2YTYp9iz2KrZitix2KfYryDZiNin2YTYqti12K_Zitix!5e0!3m2!1sen!2seg!4v1783693500698!5m2!1sen!2seg"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Haj Ali Location"
+                className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </motion.div>
           </div>
         </div>
       </div>

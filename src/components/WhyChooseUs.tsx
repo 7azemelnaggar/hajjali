@@ -116,7 +116,7 @@ export default function WhyChooseUs({ language }: WhyChooseUsProps) {
             {content.eyebrow}
             <span className="w-6 h-0.5 bg-brand-500 inline-block" />
           </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-3">
+          <h2 className="font-sans text-4xl lg:text-5xl font-bold text-white mb-3">
             {content.heading}
           </h2>
           <p className="font-arabic text-xl text-navy-200 mb-4">{content.subtitle}</p>
@@ -183,7 +183,7 @@ export default function WhyChooseUs({ language }: WhyChooseUsProps) {
               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 ${color}`}>
                 <Icon size={26} />
               </div>
-              <h3 className={`font-display font-bold text-white text-xl mb-1 ${language === 'ar' ? 'font-arabic' : ''}`}>
+              <h3 className={`font-sans font-bold text-white text-xl mb-1 ${language === 'ar' ? 'font-arabic' : ''}`}>
                 {language === 'ar' ? titleAr : title}
               </h3>
               <p className={`text-navy-300 text-sm leading-relaxed ${language === 'ar' ? 'font-arabic' : ''}`}>
@@ -204,7 +204,7 @@ export default function WhyChooseUs({ language }: WhyChooseUsProps) {
           className="mt-16 bg-gradient-to-r from-brand-500 to-brand-600 rounded-3xl p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-2xl shadow-brand-500/20"
         >
           <div>
-            <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-2">
+            <h3 className="font-sans text-2xl lg:text-3xl font-bold text-white mb-2">
               {content.ctaTitle}
             </h3>
             <p className="font-arabic text-brand-100 text-lg">{content.ctaSubtitle}</p>

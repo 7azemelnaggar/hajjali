@@ -334,7 +334,7 @@ export default function Hero({ language }: HeroProps) {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-4 text-shadow-lg"
+              className="font-sans text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-4 text-shadow-lg"
             >
               {content.titleLine1}<br />
               <span className="text-brand-400">{content.titleLine2}</span>
@@ -387,7 +387,7 @@ export default function Hero({ language }: HeroProps) {
                   transition={{ duration: 0.5, delay: 0.9 + i * 0.1 }}
                   className="text-center sm:text-left"
                 >
-                  <div className="font-display text-3xl font-bold text-brand-400 mb-1">{stat.value}</div>
+                  <div className="font-sans text-3xl font-bold text-brand-400 mb-1">{stat.value}</div>
                   <div className={`text-white/60 text-xs uppercase tracking-wider ${language === 'ar' ? 'font-arabic' : ''}`}>
                     {language === 'en' ? stat.label : stat.labelAr}
                   </div>

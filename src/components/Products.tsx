@@ -72,7 +72,7 @@ export default function Products({ language }: ProductsProps) {
             {content.eyebrow}
             <span className="w-6 h-0.5 bg-brand-500 inline-block" />
           </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-navy-800 mb-3">
+          <h2 className="font-sans text-4xl lg:text-5xl font-bold text-navy-800 mb-3">
             {content.title}
           </h2>
           <p className="font-arabic text-xl text-gray-400 mb-4">{content.subtitle}</p>
@@ -127,7 +127,7 @@ export default function Products({ language }: ProductsProps) {
 
                       {/* Content */}
                       <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h3 className="font-display text-2xl sm:text-3xl font-bold text-white leading-tight mb-4">
+                        <h3 className="font-sans text-2xl sm:text-3xl font-bold text-white leading-tight mb-4">
                           {isAr ? cat.nameAr : cat.name}
                         </h3>
 
